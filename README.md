@@ -1,7 +1,16 @@
 Trading Calendar
 ================
 
-Market calendar RESTful API with holiday, late open and early close. Over 50+ unique exchange calendars for global equity and futures markets.
+Market calendar RESTful API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
+
+Data includes:
+
+* All holidays, including: trading holidays and partial days
+* Support for timezones and daylight savings time transitions
+* Definitions for weekends for each market
+* Open and close time for each market
+* Support for irregular and interday trading hours
+* Current market status (open or closed).
 
 ## Running it locally
 
@@ -90,4 +99,4 @@ http://127.0.0.1:8000/docs
 
 > Note that exchange calendars are defined by their [ISO-10383](https://www.iso20022.org/10383/iso-10383-market-identifier-codes) market identifier code (MIC).
 
-[1]: https://hub.docker.com/repository/docker/apptasticsoftware/trading-calendar
+[1]: https://hub.docker.com/r/apptasticsoftware/trading-calendar
