@@ -5,26 +5,26 @@ Market calendar RESTful API with holiday, late open and early close. Over 50+ un
 
 ## Running it locally
 
-# Pull the Docker Image
+### Pull the Docker Image
 
 Pull pre-built image from [Docker Hub repository][1]:
 ```
 docker pull apptasticsoftware/trading-calendar:latest
 ```
 
-# Start the Docker Container
+### Start the Docker Container
 Run a container based on the image:
 ```
 docker run -d --name trading-calendar -p 8000:80 apptasticsoftware/trading-calendar
 ```
 
-# Test it
+### Test it
 You should be able to test it in your Docker container's URL, for example:
 ```
  http://127.0.0.1:8000/api/v1/markets?mic=XNYS
 ```
 
-# Interactive API docs
+### Interactive API docs
 For automatic interactive API documentation (OpenAPI, previously known as the Swagger):
 ```
 http://127.0.0.1:8000/docs
