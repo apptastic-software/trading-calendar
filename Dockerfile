@@ -1,4 +1,4 @@
-FROM python:3.9  
+FROM continuumio/miniconda3:4.10.3-alpine
 
 WORKDIR /code
 
