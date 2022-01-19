@@ -317,8 +317,9 @@ def fetch_market_holidays(mic_list, start_date, end_date):
                 close_time = early_close_time if (is_early_close) else calendar.get_close_time(d)
                 close_time = tzone.localize(datetime.combine(d, close_time))
                 holiday['is_early_close'] = is_early_close
-                holiday['open_time'] = open_time
-                holiday['close_time'] = close_time
+                if is_early_close or is_special_open:
+                    holiday['open_time'] = open_time
+                    holiday['close_time'] = close_time
                 
                 holiday_list.append(holiday)
 
