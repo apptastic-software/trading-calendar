@@ -4,6 +4,7 @@ import exchange_calendars as ecals
 
 class Exchanges:
     def __init__(self):
+        print("Exchange Calendars version: {}".format(ecals.__version__))
         self.exchanges = {}
         self.mic_list = []
         pass
