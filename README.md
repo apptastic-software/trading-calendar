@@ -34,7 +34,7 @@ You should be able to test it in your Docker container's URL, for example:
 ```
 
 ### Interactive API docs
-For automatic interactive API documentation (OpenAPI, previously known as the Swagger):
+For automatic interactive API documentation (OpenAPI, previously known as Swagger):
 ```
 http://127.0.0.1:8000/docs
 ```
