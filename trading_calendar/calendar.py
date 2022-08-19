@@ -34,7 +34,7 @@ class Calendar:
 
         if hasattr(self.calendar, 'precomputed_holidays'):
             try:
-                for precomputed_holiday in self.calendar.precomputed_holidays:
+                for precomputed_holiday in calendar.precomputed_holidays():
                     if isinstance(precomputed_holiday, pd.DatetimeIndex):
                         for precomputed_date in precomputed_holiday:
                             self.precomputed_holidays.add(str(precomputed_date.date()))
