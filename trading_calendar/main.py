@@ -1,5 +1,5 @@
 import os
-from fastapi import FastAPI, Request, Query, HTTPException
+from fastapi import FastAPI, Depends, Request, Response, Query, HTTPException
 from typing import Optional, List
 from enum import Enum
 from fastapi.encoders import jsonable_encoder
@@ -11,6 +11,11 @@ from pydantic import BaseModel
 from datetime import date, datetime, timedelta
 import pytz
 from .exchanges import Exchanges as Exchanges
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
+
+def version():
+    return "1"
 
 tags_metadata = [
     {
@@ -54,6 +59,14 @@ app = FastAPI(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+app.add_middleware(GZipMiddleware, minimum_size=500)
 
 class Status(str, Enum):
     OPEN = 'Open'
@@ -300,6 +313,8 @@ def fetch_market_holidays(mic_list, start_date, end_date):
                 is_business_day = is_special_open or is_early_close
 
                 holiday = {
+                    'exchange' : exchange.get_name(),
+                    'flag' : exchange.get_flag(),
                     'mic' : mic,
                     'date' : date_str,
                     'day_of_week' :  weekday_name[d.weekday()],
@@ -359,11 +374,21 @@ def startup_event():
     available_mic.update(exchanges.get_mic_list())
 
 
+def get_markets_etag(mic):
+    mic_str = mic or "all"
+    mic_str = mic_str.replace(",", "")
+    return "markets_" + version() + mic_str
+
 @app.get("/api/v1/markets", response_model=List[MarketResponse] , tags=['Markets'])
 @limiter.limit(rate_limit)
 def get_markets(request: Request,
                 mic: str = Query(None, title="MIC code", description="Specify comma separated list of MIC codes for which market to show data for.", example="XNYS")):
     
+    etag = request.headers.get("if-none-match")
+    current_etag = get_markets_etag(mic)
+    if etag == current_etag:
+        return Response("", 304, headers={"etag": current_etag})
+
     if mic:
         mic = split_unique(mic)
         validate_request_mic(mic)
@@ -372,7 +397,13 @@ def get_markets(request: Request,
 
     markets = fetch_markets(mic)
     json_markets = jsonable_encoder(markets)
-    return JSONResponse(json_markets)
+    response = JSONResponse(json_markets)
+
+    if "etag" not in response.headers:
+        response.headers["etag"] = current_etag
+        response.headers["Cache-Control"] = "max-age=3600"
+
+    return response
 
 
 @app.get("/api/v1/markets/status", response_model=List[MarketStatusResponse], tags=['Market Status'])
@@ -389,6 +420,11 @@ def get_market_status(request: Request,
     status = fetch_status(mic)
     return JSONResponse(jsonable_encoder(status))
 
+def get_trading_hours_etag(mic, start, end):
+    mic_str = mic or ""
+    start_str = str(start.strftime("%Y%m%d"))
+    end_str = str(end.strftime("%Y%m%d"))
+    return "hours_" + version() + mic_str + start_str + end_str
 
 @app.get("/api/v1/markets/hours", response_model=List[TradingHoursResponse], tags=['Trading Hours'])
 @limiter.limit(rate_limit)
@@ -398,6 +434,12 @@ def get_trading_hours(request: Request,
                       end: date = Query(..., title="End date", description="Show holidays until this date.", example=datetime.today().strftime("%Y-%m-%d"))):
 
     validate_request_start_end(start, end)
+
+    etag = request.headers.get("if-none-match")
+    current_etag = get_trading_hours_etag(mic, start, end)
+    if etag == current_etag:
+        return Response("", 304, headers={"etag": current_etag})
+
     if mic:
         mic = split_unique(mic)
         validate_request_mic(mic)
@@ -405,8 +447,20 @@ def get_trading_hours(request: Request,
         mic = all_mic_list
 
     holidays = fetch_trading_hours(mic, start, end)
-    return JSONResponse(jsonable_encoder(holidays))
+    response = JSONResponse(jsonable_encoder(holidays))
 
+    if "etag" not in response.headers:
+        response.headers["etag"] = current_etag
+        response.headers["Cache-Control"] = "max-age=3600"
+
+    return response
+
+
+def get_market_holidays_etag(mic, start, end):
+    mic_str = mic or ""
+    start_str = str(start.strftime("%Y%m%d"))
+    end_str = str(end.strftime("%Y%m%d"))
+    return "holidays_" + version() + mic_str + start_str + end_str
 
 @app.get("/api/v1/markets/holidays", response_model=List[MarketHolidayResponse], tags=['Market Holidays'])
 @limiter.limit(rate_limit)
@@ -416,6 +470,12 @@ def get_market_holidays(request: Request,
                         end: date = Query(..., title="End date", description="Show holidays until this date.", example=datetime.today().strftime("%Y-%m-%d"))):
     
     validate_request_start_end(start, end)
+
+    etag = request.headers.get("if-none-match")
+    current_etag = get_market_holidays_etag(mic, start, end)
+    if etag == current_etag:
+        return Response("", 304, headers={"etag": current_etag})
+
     if mic:
         mic = split_unique(mic)
         validate_request_mic(mic)
@@ -423,4 +483,10 @@ def get_market_holidays(request: Request,
         mic = all_mic_list
 
     holidays = fetch_market_holidays(mic, start, end)
-    return JSONResponse(jsonable_encoder(holidays))
+    response = JSONResponse(jsonable_encoder(jsonable_encoder(holidays)))
+
+    if "etag" not in response.headers:
+        response.headers["etag"] = current_etag
+        response.headers["Cache-Control"] = "max-age=3600"
+
+    return response
