@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: python-server
+    command: uvicorn trading_calendar.main:app --host 0.0.0.0 --port 80 --reload
+    ports:
+      - 80:80
+      - 5678:5678
+    volumes:
+      - .:/code
+
+  requirements:
+    image: continuumio/miniconda3:4.10.3-alpine
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: pip install -r requirements.txt

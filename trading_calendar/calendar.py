@@ -1,9 +1,11 @@
 from datetime import date, datetime, timezone, timedelta
 from numpy import datetime64
 import pandas as pd
+import holidays
 
 class Calendar:
-    def __init__(self, calendar):
+    def __init__(self, calendar, country_code):
+        print("Holidays version: {}".format(holidays.__version__))
         self.calendar = calendar
         self.regular_holidays = None
         self.adhoc_holidays = set()
@@ -12,7 +14,8 @@ class Calendar:
         self.special_closes_adhoc = []
         self.special_opens = []
         self.special_opens_adhoc = []
-        
+        self.country_code = country_code        
+
         if calendar.regular_holidays:
             try:
                 self.regular_holidays = calendar.regular_holidays.holidays(return_name=True)
@@ -147,20 +150,26 @@ class Calendar:
     def get_holiday_name(self, ts):
         default_name = ''
         date_str = str(ts.strftime('%Y-%m-%d'))
-        try:
-            value = self.regular_holidays[date_str]
-            if isinstance(value, pd.Series):
-                return (value[1], None, None)
-            else:
-                return (value, None, None)
-        except Exception as e:
-            pass
+
+        if self.regular_holidays is not None:
+            try:          
+                value = self.regular_holidays[date_str]
+                if isinstance(value, pd.Series):
+                    return (value[1], None, None)
+                else:
+                    return (value, None, None)
+            except Exception as e:
+                pass
 
         if date_str in self.adhoc_holidays:
-            return (default_name, None, None)
+            holiday_name = self.get_country_holiday_name(ts)
+            holiday_name = holiday_name if holiday_name is not None else default_name
+            return (holiday_name, None, None)
 
         if date_str in self.precomputed_holidays:
-            return (default_name, None, None)
+            holiday_name = self.get_country_holiday_name(ts)
+            holiday_name = holiday_name if holiday_name is not None else default_name
+            return (holiday_name, None, None)
 
         holiday_name = None
         special_open_time = None
@@ -196,5 +205,30 @@ class Calendar:
                     holiday_name = default_name if not holiday_name else holiday_name
                     special_open_time = open_time
 
+        if (holiday_name == default_name):
+            name = self.get_country_holiday_name(ts)
+            holiday_name = name if name is not None else holiday_name
+
         return (holiday_name, special_open_time, early_close_time)
 
+    def get_country_holiday_name(self, ts):
+        date_str = str(ts.strftime('%Y-%m-%d'))
+
+        try:
+            country_holiday = holidays.country_holidays(self.country_code)
+            if country_holiday is None:
+                return None
+
+            name = country_holiday.get(date_str)
+            if name is not None:
+                return name
+
+            for subdivision in country_holiday.subdivisions:
+                subdivisions_holiday = holidays.country_holidays(self.country_code, subdiv=subdivision)
+                name = subdivisions_holiday.get(date_str)
+                if name is not None:
+                    return name
+        except:
+            pass
+
+        return None

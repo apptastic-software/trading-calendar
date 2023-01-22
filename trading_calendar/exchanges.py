@@ -9,7 +9,6 @@ class Exchanges:
         self.mic_list = []
         pass
 
-#XBSE
 
     def load(self):
         exchange_list = {
@@ -604,7 +603,7 @@ class Exchanges:
                 country_code = exchange.get('country_code'),
                 flag = exchange.get('flag'),
                 region = exchange.get('region'),
-                calendar = Calendar(ecals.get_calendar(mic))
+                calendar = Calendar(ecals.get_calendar(mic), exchange.get('country_code'))
             )
 
     def get_exchange(self, mic):
