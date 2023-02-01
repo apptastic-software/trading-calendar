@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 
 def version():
-    return "2"
+    return "0.0.12"
 
 tags_metadata = [
     {
@@ -44,7 +44,7 @@ limiter = Limiter(key_func=get_remote_address, headers_enabled=True, enabled='RA
 app = FastAPI(
     title="Trading Calendar",
     description=description,
-    version="1.0.0",
+    version=version(),
     contact={
         "name": "Apptastic Software",
         "url": "https://github.com/apptastic-software/trading-calendar/issues",
