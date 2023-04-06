@@ -26,7 +26,7 @@ Run a container based on the image:
 ```
 docker run -d --name trading-calendar -p 8000:80 apptasticsoftware/trading-calendar
 ```
-It will take around one minute for the cointainer to start and accept requests.
+It will take around one minute for the container to start and accept requests.
 
 ### Test it
 Test that the docker container is working:
