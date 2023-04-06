@@ -1,7 +1,7 @@
 Trading Calendar
 ================
 
-Market calendar RESTful API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
+Market calendar REST API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
 
 Data includes:
 
@@ -10,7 +10,7 @@ Data includes:
 * Definitions for weekends for each market
 * Open and close time for each market
 * Support for irregular and interday trading hours
-* Current market status (open or closed).
+* Current market status (open or closed based on static schedule).
 
 ## Running it locally
 
@@ -26,15 +26,16 @@ Run a container based on the image:
 ```
 docker run -d --name trading-calendar -p 8000:80 apptasticsoftware/trading-calendar
 ```
+It will take around one minute for the cointainer to start and accept requests.
 
 ### Test it
-You should be able to test it in your Docker container's URL, for example:
+Test that the docker container is working:
 ```
  http://127.0.0.1:8000/api/v1/markets?mic=XNYS
 ```
 
 ### Interactive API docs
-For automatic interactive API documentation (OpenAPI, previously known as Swagger):
+For automatic interactive API documentation:
 ```
 http://127.0.0.1:8000/docs
 ```
@@ -49,7 +50,7 @@ http://127.0.0.1:8000/docs
 | Chicago Mercantile Exchange     | CMES     | USA            | https://www.cmegroup.com/                                    |
 | ICE US                          | IEPA     | USA            | https://www.theice.com/index                                 |
 | Toronto Stock Exchange          | XTSE     | Canada         | https://www.tsx.com/                                         |
-| BMF Bovespa                     | BVMF     | Brazil         | http://www.b3.com.br/en_us/                                  |
+| B3 S.A. - Brasil Bolsa Balcao   | BVMF     | Brazil         | http://www.b3.com.br/en_us/                                  |
 | London Stock Exchange           | XLON     | England        | https://www.londonstockexchange.com/home/homepage.htm        |
 | Euronext Amsterdam              | XAMS     | Netherlands    | https://www.euronext.com/en/regulation/amsterdam             |
 | Euronext Brussels               | XBRU     | Belgium        | https://www.euronext.com/en/regulation/brussels              |
