@@ -1,7 +1,7 @@
 Trading Calendar
 ================
 
-Market calendar REST API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
+Free market calendar REST API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
 
 Data includes:
 
@@ -95,6 +95,7 @@ http://127.0.0.1:8000/docs
 | Taiwan Stock Exchange Corp.     | XTAI     | Taiwan         | https://www.twse.com.tw/en/                                  |
 | Buenos Aires Stock Exchange     | XBUE     | Argentina      | https://www.bcba.sba.com.ar/                                 |
 | Pakistan Stock Exchange         | XKAR     | Pakistan       | https://www.psx.com.pk/                                      |
+| Saudi Stock Exchange            | XSAU     | Saudi Arabia   | https://www.saudiexchange.sa/                                |
 | Astana International Exchange   | AIXK     | Kazakhstan     | https://www.aix.kz/                                          |
 | Bucharest Stock Exchange        | XBSE     | Romania        | https://www.bvb.ro/                                          |
 
