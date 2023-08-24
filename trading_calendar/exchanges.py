@@ -441,6 +441,17 @@ class Exchanges:
                 'region' : 'Asia-Pacific',
                 'flag' : '🇵🇰',
             },
+            'XSAU' : {
+                'mic' : 'XSAU',
+                'name' : 'Saudi Stock Exchange',
+                'acronym' : None,
+                'url' : 'https://www.tadawul.com.sa/',
+                'city' : 'Rijad',
+                'country' : 'Saudi Arabia',
+                'country_code' : 'SA',
+                'region' : 'Middle East',
+                'flag' : '🇸🇦',
+            },
             'XJSE' : {
                 'mic' : 'XJSE',
                 'name' : 'Johannesburg Stock Exchange',
