@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 
 def version():
-    return "0.0.13"
+    return "0.0.14"
 
 tags_metadata = [
     {
