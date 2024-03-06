@@ -135,7 +135,7 @@ class MarketHolidayResponse(BaseModel):
 exchanges = Exchanges()
 available_mic = set()
 all_mic_list = []
-weekday_name = [Weekday.MONDAY, Weekday.THURSDAY, Weekday.WEDNESDAY, Weekday.THURSDAY, Weekday.FRIDAY, Weekday.SATURDAY, Weekday.SUNDAY]
+weekday_name = [Weekday.MONDAY, Weekday.TUESDAY, Weekday.WEDNESDAY, Weekday.THURSDAY, Weekday.FRIDAY, Weekday.SATURDAY, Weekday.SUNDAY]
 rate_limit = "{}/minute".format(int(os.environ.get('RATE_LIMIT', 50000)))
 max_days = int(os.environ.get('MAX_DAYS', 366))
 
