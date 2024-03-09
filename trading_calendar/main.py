@@ -9,7 +9,6 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from pydantic import BaseModel
 from datetime import date, datetime, timedelta
-import pytz
 from .exchanges import Exchanges as Exchanges
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
@@ -160,9 +159,9 @@ def fetch_markets(mic_list):
 
         calendar = exchange.get_calendar()
         tz = calendar.get_timezone()
-        loc_dt = tz.localize(dt)
-        open_time = calendar.get_open_time(dt.date()).strftime("%H:%M")
-        close_time = calendar.get_close_time(dt.date()).strftime("%H:%M")
+        loc_dt = dt.astimezone(tz)
+        open_time = calendar.get_open_time(loc_dt.date()).strftime("%H:%M")
+        close_time = calendar.get_close_time(loc_dt.date()).strftime("%H:%M")
 
         market = {
             'mic': exchange.get_mic(),
@@ -174,7 +173,7 @@ def fetch_markets(mic_list):
             'country_code': exchange.get_country_code(),
             'flag': exchange.get_flag(),
             'region': exchange.get_region(),
-            'timezone': tz.zone,
+            'timezone': str(tz),
             'timezone_abbr': loc_dt.tzname(),
             'utc_offset': loc_dt.strftime("%z"),
             'weekdays' : calendar.get_weekdays(),
@@ -202,17 +201,16 @@ def fetch_status(mic_list):
 
         try:
             tz = calendar.get_timezone()
-            tzone = pytz.timezone(tz.zone)
-            local_time = datetime.now(tzone).replace(microsecond=0)
+            local_time = datetime.now().astimezone(tz).replace(microsecond=0)
 
             (holiday_name, special_open_time, early_close_time) = calendar.get_holiday_name(local_time.date())            
             is_special_open = not special_open_time == None
             is_early_close = not early_close_time == None
 
             open_time = special_open_time if (is_special_open) else calendar.get_open_time(local_time.date())
-            open_time = tzone.localize(datetime.combine(local_time.date(), open_time))
+            open_time = datetime.combine(local_time.date(), open_time, tz)
             close_time = early_close_time if (is_early_close) else calendar.get_close_time(local_time.date())
-            close_time = tzone.localize(datetime.combine(local_time.date(), close_time))
+            close_time = datetime.combine(local_time.date(), close_time, tz)
 
             is_weekend = calendar.is_weekend(local_time)
             is_business_day = (not is_weekend) and (not holiday_name or (is_special_open or is_early_close)) 
@@ -267,11 +265,10 @@ def fetch_trading_hours(mic_list, start_date, end_date):
                     continue
 
                 tz = calendar.get_timezone()
-                tzone = pytz.timezone(tz.zone)
                 open_time = special_open_time if (is_special_open) else calendar.get_open_time(d)
-                open_time = tzone.localize(datetime.combine(d, open_time))
+                open_time = datetime.combine(d, open_time, tz)
                 close_time = early_close_time if (is_early_close) else calendar.get_close_time(d)
-                close_time = tzone.localize(datetime.combine(d, close_time))    
+                close_time = datetime.combine(d, close_time, tz)
 
                 trading_hours = {
                     'mic' : mic,
@@ -326,11 +323,10 @@ def fetch_market_holidays(mic_list, start_date, end_date):
                     holiday['holiday_name'] = holiday_name
 
                 tz = calendar.get_timezone()
-                tzone = pytz.timezone(tz.zone)
                 open_time = special_open_time if (is_special_open) else calendar.get_open_time(d)
-                open_time = tzone.localize(datetime.combine(d, open_time))
+                open_time = datetime.combine(d, open_time, tz)
                 close_time = early_close_time if (is_early_close) else calendar.get_close_time(d)
-                close_time = tzone.localize(datetime.combine(d, close_time))
+                close_time = datetime.combine(d, close_time, tz)
                 holiday['is_early_close'] = is_early_close
                 if is_early_close or is_special_open:
                     holiday['open_time'] = open_time
