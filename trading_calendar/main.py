@@ -16,6 +16,8 @@ from fastapi.middleware.gzip import GZipMiddleware
 def version():
     return "0.0.14"
 
+print("Trading Calendar version: {}".format(version()))
+
 tags_metadata = [
     {
         "name": "Markets",
