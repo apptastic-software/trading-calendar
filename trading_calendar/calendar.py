@@ -3,9 +3,10 @@ from numpy import datetime64
 import pandas as pd
 import holidays
 
+print("Holidays version: {}".format(holidays.__version__))
+
 class Calendar:
     def __init__(self, calendar, country_code):
-        print("Holidays version: {}".format(holidays.__version__))
         self.calendar = calendar
         self.regular_holidays = None
         self.adhoc_holidays = set()
