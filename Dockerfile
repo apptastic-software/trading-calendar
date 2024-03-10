@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:23.5.2-0-alpine
+FROM python:3.12.2-slim-bookworm
 
 WORKDIR /code
 
