@@ -1,8 +1,9 @@
 class Exchange:
-    def __init__(self, mic, name, acronym, url, city, country, country_code, flag, region, calendar):
+    def __init__(self, mic, name, acronym, lei, url, city, country, country_code, flag, region, calendar):
         self.mic = mic
         self.name = name
         self.acronym = acronym
+        self.lei = lei
         self.url = url
         self.city = city
         self.country = country
@@ -19,6 +20,9 @@ class Exchange:
 
     def get_acronym(self):
         return self.acronym
+
+    def get_lei(self):
+        return self.lei
 
     def get_url(self):
         return self.url
