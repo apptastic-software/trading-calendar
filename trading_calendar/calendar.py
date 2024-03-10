@@ -15,6 +15,7 @@ class Calendar:
         self.special_closes_adhoc = []
         self.special_opens = []
         self.special_opens_adhoc = []
+        self.weekday_early_close = {}
         self.country_code = country_code        
 
         if calendar.regular_holidays:
@@ -51,8 +52,11 @@ class Calendar:
         for special_close in calendar.special_closes: 
             try:
                 (close_time, early_close_holidays) = special_close
-                holiday = early_close_holidays.holidays(return_name=True)
-                self.early_close.append((close_time, holiday))
+                if isinstance(early_close_holidays, int):
+                    self.weekday_early_close[early_close_holidays] = close_time
+                else:
+                    holiday = early_close_holidays.holidays(return_name=True)
+                    self.early_close.append((close_time, holiday))
             except Exception as e:
                 print("Exception in special_closes for {}. Message: {}".format(calendar.name, e))
                 pass
@@ -209,6 +213,9 @@ class Calendar:
         if (holiday_name == default_name):
             name = self.get_country_holiday_name(ts)
             holiday_name = name if name is not None else holiday_name
+
+        if ts.weekday() in self.weekday_early_close:
+            early_close_time = self.weekday_early_close[ts.weekday()]
 
         return (holiday_name, special_open_time, early_close_time)
 
