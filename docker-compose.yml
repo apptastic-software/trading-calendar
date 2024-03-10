@@ -10,7 +10,7 @@ services:
       - .:/code
 
   requirements:
-    image: continuumio/miniconda3:4.10.3-alpine
+    image: continuumio/miniconda3:23.5.2-0-alpine
     volumes:
       - .:/code
     working_dir: /code
