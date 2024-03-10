@@ -43,13 +43,13 @@ http://127.0.0.1:8000/docs
 ### ReDoc UI
 Alternative API documentation with ReDoc:
 ```
-http://localhost:8000/redoc
+http://127.0.0.1:8000/redoc
 ```
 
 ### OpenAPI
-OpenAPI 3.0 specification:
+OpenAPI 3.1 specification:
 ```
-http://localhost:8001/api/v1/openapi.json
+http://127.0.0.1:8001/api/v1/openapi.json
 ```
 
 ## Calendar Support
