@@ -1,7 +1,7 @@
 Trading Calendar
 ================
 
-[![Download](https://img.shields.io/badge/version-0.0.15-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags?page=1&name=0.0.15)
+[![Download](https://img.shields.io/badge/version-0.0.15-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
 
 Free market calendar REST API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
 
