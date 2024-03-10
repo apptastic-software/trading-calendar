@@ -86,6 +86,7 @@ class MarketResponse(BaseModel):
     mic: str
     exchange: str
     acronym: Optional[str]
+    lei: str
     url: str
     city: str
     country: str
@@ -169,6 +170,7 @@ def fetch_markets(mic_list):
             'mic': exchange.get_mic(),
             'exchange': exchange.get_name(),
             'acronym': exchange.get_acronym(),
+            'lei': exchange.get_lei(),
             'url': exchange.get_url(),
             'city': exchange.get_city(),
             'country': exchange.get_country(),
