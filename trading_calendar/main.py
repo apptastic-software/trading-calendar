@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 
 def version():
-    return "0.0.14"
+    return "0.0.15"
 
 print("Trading Calendar version: {}".format(version()))
 
