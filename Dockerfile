@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:4.10.3-alpine
+FROM continuumio/miniconda3:23.5.2-0-alpine
 
 WORKDIR /code
 
