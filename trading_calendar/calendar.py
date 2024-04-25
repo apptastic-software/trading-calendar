@@ -1,4 +1,5 @@
 from datetime import date, datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 from numpy import datetime64
 import pandas as pd
 import holidays
@@ -126,6 +127,10 @@ class Calendar:
         return None
     
     def get_timezone(self):
+        if self.country_code == 'DE':
+            return ZoneInfo('Europe/Berlin')
+        elif self.country_code == 'NZ':
+            return ZoneInfo('Pacific/Auckland')
         return self.calendar.tz
 
     def get_open_time(self, ts):
