@@ -23,6 +23,7 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'dst_transitions' : 'true',
             },
             'XCBF' : {
                 'mic' : 'XCBF',
@@ -35,6 +36,7 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'dst_transitions' : 'true',
             },
             'CMES' : {
                 'mic' : 'CMES',
@@ -47,6 +49,7 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'dst_transitions' : 'true',
             },
             'IEPA' : {
                 'mic' : 'IEPA',
@@ -59,6 +62,7 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'dst_transitions' : 'true',
             },
             'XTSE' : {
                 'mic' : 'XTSE',
@@ -71,6 +75,7 @@ class Exchanges:
                 'country_code' : 'CA',
                 'region' : 'North America',
                 'flag' : '🇨🇦',
+                'dst_transitions' : 'true',
             },
             'BVMF' : {
                 'mic' : 'BVMF',
@@ -83,6 +88,7 @@ class Exchanges:
                 'country_code' : 'BR',
                 'region' : 'South America',
                 'flag' : '🇧🇷',
+                'dst_transitions' : 'false',
             },
             'XBUE' : {
                 'mic' : 'XBUE',
@@ -95,6 +101,7 @@ class Exchanges:
                 'country_code' : 'AR',
                 'region' : 'South America',
                 'flag' : '🇦🇷',
+                'dst_transitions' : 'false',
             },
             'XMEX' : {
                 'mic' : 'XMEX',
@@ -107,6 +114,7 @@ class Exchanges:
                 'country_code' : 'MX',
                 'region' : 'South America',
                 'flag' : '🇲🇽',
+                'dst_transitions' : 'false',
             },
             'XSGO' : {
                 'mic' : 'XSGO',
@@ -119,6 +127,7 @@ class Exchanges:
                 'country_code' : 'CL',
                 'region' : 'South America',
                 'flag' : '🇨🇱',
+                'dst_transitions' : 'true',
             },
             'XBOG' : {
                 'mic' : 'XBOG',
@@ -131,6 +140,7 @@ class Exchanges:
                 'country_code' : 'CO',
                 'region' : 'South America',
                 'flag' : '🇨🇴',
+                'dst_transitions' : 'true',
             },
             'XLIM' : {
                 'mic' : 'XLIM',
@@ -143,6 +153,7 @@ class Exchanges:
                 'country_code' : 'PE',
                 'region' : 'South America',
                 'flag' : '🇵🇪',
+                'dst_transitions' : 'false',
             },
             'XICE' : {
                 'mic' : 'XICE',
@@ -155,6 +166,7 @@ class Exchanges:
                 'country_code' : 'IS',
                 'region' : 'Europe',
                 'flag' : '🇮🇸',
+                'dst_transitions' : 'false',
             },
             'XOSL' : {
                 'mic' : 'XOSL',
@@ -167,6 +179,7 @@ class Exchanges:
                 'country_code' : 'NO',
                 'region' : 'Europe',
                 'flag' : '🇳🇴',
+                'dst_transitions' : 'true',
             },
             'XSTO' : {
                 'mic' : 'XSTO',
@@ -179,6 +192,7 @@ class Exchanges:
                 'country_code' : 'SE',
                 'region' : 'Europe',
                 'flag' : '🇸🇪',
+                'dst_transitions' : 'true',
             },
             'XHEL' : {
                 'mic' : 'XHEL',
@@ -191,6 +205,7 @@ class Exchanges:
                 'country_code' : 'FI',
                 'region' : 'Europe',
                 'flag' : '🇫🇮',
+                'dst_transitions' : 'true',
             },
             'XCSE' : {
                 'mic' : 'XCSE',
@@ -203,6 +218,7 @@ class Exchanges:
                 'country_code' : 'DK',
                 'region' : 'Europe',
                 'flag' : '🇩🇰',
+                'dst_transitions' : 'true',
             },
             'XLON' : {
                 'mic' : 'XLON',
@@ -215,6 +231,7 @@ class Exchanges:
                 'country_code' : 'GB',
                 'region' : 'Europe',
                 'flag' : '🇬🇧',
+                'dst_transitions' : 'true',
             },
             'XDUB' : {
                 'mic' : 'XDUB',
@@ -227,6 +244,7 @@ class Exchanges:
                 'country_code' : 'IE',
                 'region' : 'Europe',
                 'flag' : '🇮🇪',
+                'dst_transitions' : 'true',
             },
             'XAMS' : {
                 'mic' : 'XAMS',
@@ -239,6 +257,7 @@ class Exchanges:
                 'country_code' : 'NL',
                 'region' : 'Europe',
                 'flag' : '🇳🇱',
+                'dst_transitions' : 'true',
             },
             'XBRU' : {
                 'mic' : 'XBRU',
@@ -251,6 +270,7 @@ class Exchanges:
                 'country_code' : 'BE',
                 'region' : 'Europe',
                 'flag' : '🇧🇪',
+                'dst_transitions' : 'true',
             },
             'XFRA' : {
                 'mic' : 'XFRA',
@@ -263,6 +283,7 @@ class Exchanges:
                 'country_code' : 'DE',
                 'region' : 'Europe',
                 'flag' : '🇩🇪',
+                'dst_transitions' : 'true',
             },
             'XETR' : {
                 'mic' : 'XETR',
@@ -275,6 +296,7 @@ class Exchanges:
                 'country_code' : 'DE',
                 'region' : 'Europe',
                 'flag' : '🇩🇪',
+                'dst_transitions' : 'true',
             },
             'XSWX' : {
                 'mic' : 'XSWX',
@@ -287,6 +309,7 @@ class Exchanges:
                 'country_code' : 'CH',
                 'region' : 'Europe',
                 'flag' : '🇨🇭',
+                'dst_transitions' : 'true',
             },
             'XWBO' : {
                 'mic' : 'XWBO',
@@ -299,6 +322,7 @@ class Exchanges:
                 'country_code' : 'AT',
                 'region' : 'Europe',
                 'flag' : '🇦🇹',
+                'dst_transitions' : 'true',
             },
             'XWAR' : {
                 'mic' : 'XWAR',
@@ -311,6 +335,7 @@ class Exchanges:
                 'country_code' : 'PL',
                 'region' : 'Europe',
                 'flag' : '🇵🇱',
+                'dst_transitions' : 'true',
             },
             'XPRA' : {
                 'mic' : 'XPRA',
@@ -323,6 +348,7 @@ class Exchanges:
                 'country_code' : 'CZ',
                 'region' : 'Europe',
                 'flag' : '🇨🇿',
+                'dst_transitions' : 'true',
             },
             'XMOS' : {
                 'mic' : 'XMOS',
@@ -335,6 +361,7 @@ class Exchanges:
                 'country_code' : 'RU',
                 'region' : 'Europe',
                 'flag' : '🇷🇺',
+                'dst_transitions' : 'false',
             },
             'AIXK' : {
                 'mic' : 'AIXK',
@@ -345,8 +372,9 @@ class Exchanges:
                 'city' : 'Astana',
                 'country' : 'Kazakhstan',
                 'country_code' : 'KZ',
-                'region' : 'Europe',
+                'region' : 'Asia-Pacific',
                 'flag' : '🇰🇿',
+                'dst_transitions' : 'false',
             },
             'XLIS' : {
                 'mic' : 'XLIS',
@@ -359,6 +387,7 @@ class Exchanges:
                 'country_code' : 'PT',
                 'region' : 'Europe',
                 'flag' : '🇵🇹',
+                'dst_transitions' : 'true',
             },
             'XPAR' : {
                 'mic' : 'XPAR',
@@ -371,6 +400,7 @@ class Exchanges:
                 'country_code' : 'FR',
                 'region' : 'Europe',
                 'flag' : '🇫🇷',
+                'dst_transitions' : 'true',
             },
             'XMAD' : {
                 'mic' : 'XMAD',
@@ -383,6 +413,7 @@ class Exchanges:
                 'country_code' : 'ES',
                 'region' : 'Europe',
                 'flag' : '🇪🇸',
+                'dst_transitions' : 'true',
             },
             'XMIL' : {
                 'mic' : 'XMIL',
@@ -395,6 +426,7 @@ class Exchanges:
                 'country_code' : 'IT',
                 'region' : 'Europe',
                 'flag' : '🇮🇹',
+                'dst_transitions' : 'true',
             },
             'XBUD' : {
                 'mic' : 'XBUD',
@@ -407,6 +439,7 @@ class Exchanges:
                 'country_code' : 'HU',
                 'region' : 'Europe',
                 'flag' : '🇭🇺',
+                'dst_transitions' : 'true',
             },
             'XBSE' : {
                 'mic' : 'XBSE',
@@ -419,6 +452,7 @@ class Exchanges:
                 'country_code' : 'RO',
                 'region' : 'Europe',
                 'flag' : '🇷🇴',
+                'dst_transitions' : 'true',
             },            
             'ASEX' : {
                 'mic' : 'ASEX',
@@ -431,6 +465,7 @@ class Exchanges:
                 'country_code' : 'GR',
                 'region' : 'Europe',
                 'flag' : '🇬🇷',
+                'dst_transitions' : 'true',
             },
             'XIST' : {
                 'mic' : 'XIST',
@@ -443,6 +478,7 @@ class Exchanges:
                 'country_code' : 'TR',
                 'region' : 'Europe',
                 'flag' : '🇹🇷',
+                'dst_transitions' : 'false',
             },
             'XTAE' : {
                 'mic' : 'XTAE',
@@ -455,6 +491,7 @@ class Exchanges:
                 'country_code' : 'IL',
                 'region' : 'Europe',
                 'flag' : '🇮🇱',
+                'dst_transitions' : 'true',
             },
             'XBOM' : {
                 'mic' : 'XBOM',
@@ -467,6 +504,7 @@ class Exchanges:
                 'country_code' : 'IN',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇮🇳',
+                'dst_transitions' : 'false',
             },
             'XKAR' : {
                 'mic' : 'XKAR',
@@ -479,6 +517,7 @@ class Exchanges:
                 'country_code' : 'PK',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇵🇰',
+                'dst_transitions' : 'false',
             },
             'XSAU' : {
                 'mic' : 'XSAU',
@@ -491,6 +530,7 @@ class Exchanges:
                 'country_code' : 'SA',
                 'region' : 'Middle East',
                 'flag' : '🇸🇦',
+                'dst_transitions' : 'false',
             },
             'XJSE' : {
                 'mic' : 'XJSE',
@@ -503,6 +543,7 @@ class Exchanges:
                 'country_code' : 'ZA',
                 'region' : 'Africa',
                 'flag' : '🇿🇦',
+                'dst_transitions' : 'false',
             },
             'XHKG' : {
                 'mic' : 'XHKG',
@@ -515,6 +556,7 @@ class Exchanges:
                 'country_code' : 'HK',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇭🇰',
+                'dst_transitions' : 'false',
             },
             'XSES' : {
                 'mic' : 'XSES',
@@ -527,6 +569,7 @@ class Exchanges:
                 'country_code' : 'SG',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇸🇬',
+                'dst_transitions' : 'false',
             },
             'XSHG' : {
                 'mic' : 'XSHG',
@@ -539,6 +582,7 @@ class Exchanges:
                 'country_code' : 'CN',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇨🇳',
+                'dst_transitions' : 'false',
             },
             'XTAI' : {
                 'mic' : 'XTAI',
@@ -551,6 +595,7 @@ class Exchanges:
                 'country_code' : 'TW',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇹🇼',
+                'dst_transitions' : 'false',
             },
             'XKLS' : {
                 'mic' : 'XKLS',
@@ -563,6 +608,7 @@ class Exchanges:
                 'country_code' : 'MY',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇲🇾',
+                'dst_transitions' : 'false',
             },
             'XIDX' : {
                 'mic' : 'XIDX',
@@ -575,6 +621,7 @@ class Exchanges:
                 'country_code' : 'ID',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇮🇩',
+                'dst_transitions' : 'false',
             },
             'XBKK' : {
                 'mic' : 'XBKK',
@@ -587,6 +634,7 @@ class Exchanges:
                 'country_code' : 'TH',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇹🇭',
+                'dst_transitions' : 'false',
             },
             'XPHS' : {
                 'mic' : 'XPHS',
@@ -599,6 +647,7 @@ class Exchanges:
                 'country_code' : 'PH',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇵🇭',
+                'dst_transitions' : 'false',
             },
             'XKRX' : {
                 'mic' : 'XKRX',
@@ -611,6 +660,7 @@ class Exchanges:
                 'country_code' : 'KR',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇰🇷',
+                'dst_transitions' : 'false',
             },
             'XTKS' : {
                 'mic' : 'XTKS',
@@ -623,6 +673,7 @@ class Exchanges:
                 'country_code' : 'JP',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇯🇵',
+                'dst_transitions' : 'false',
             },
             'XASX' : {
                 'mic' : 'XASX',
@@ -635,6 +686,7 @@ class Exchanges:
                 'country_code' : 'AU',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇦🇺',
+                'dst_transitions' : 'true',
             },
             'XNZE' : {
                 'mic' : 'XNZE',
@@ -647,6 +699,7 @@ class Exchanges:
                 'country_code' : 'NZ',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇳🇿',
+                'dst_transitions' : 'true',
             }
         }
 
@@ -668,6 +721,7 @@ class Exchanges:
                 country_code = exchange.get('country_code'),
                 flag = exchange.get('flag'),
                 region = exchange.get('region'),
+                dst_transitions = exchange.get('dst_transitions').lower() == 'true',
                 calendar = Calendar(ecals.get_calendar(mic), exchange.get('country_code'))
             )
 
