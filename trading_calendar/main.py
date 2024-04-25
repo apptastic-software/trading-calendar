@@ -8,7 +8,8 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from pydantic import BaseModel
-from datetime import date, datetime, timedelta
+from datetime import date, time, datetime, timedelta
+from zoneinfo import ZoneInfo
 from .exchanges import Exchanges as Exchanges
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
@@ -96,6 +97,9 @@ class MarketResponse(BaseModel):
     timezone: str
     timezone_abbr: str
     utc_offset: str
+    dst: bool
+    previous_dst_transition: Optional[date]
+    next_dst_transition: Optional[date]
     working_days : List[Weekday]
     open_time: str
     close_time: str
@@ -151,9 +155,46 @@ def daterange(start_date, end_date):
         yield start_date + timedelta(n)
 
 
+def is_date_of_dst_transition(dt, zone):
+    _d = datetime.combine(dt.date(), time.min).replace(tzinfo=zone)
+    return _d.dst() != (_d+timedelta(1)).dst()
+
+
+def previous_dst_transition(dt, zone):
+    for d in range(366):
+        if is_date_of_dst_transition(dt - timedelta(d), zone):
+            return (dt - timedelta(d)).date()
+    return None
+
+
+def next_dst_transition(dt, zone):
+    for d in range(1, 366):
+        if is_date_of_dst_transition(dt + timedelta(d), zone):
+            return (dt + timedelta(d)).date()
+    return None
+
+
+def get_dst_transitions(dt, zone):
+    next = next_dst_transition(dt, zone)
+    if (next):
+        previous = previous_dst_transition(dt, zone)
+    else:
+        print(zone)
+        previous = None
+    return next, previous 
+
+
+def is_dst(dt, zone):
+    if zone == ZoneInfo('Europe/Dublin'):
+        return bool(dt.astimezone(ZoneInfo('Europe/London')).dst())
+    
+    return bool(dt.dst())
+
+
 def fetch_markets(mic_list):
     dt = datetime.now()
     markets = []
+    dst_transitions_by_timezone = {}
 
     for mic in mic_list:
         exchange = exchanges.get_exchange(mic)
@@ -165,6 +206,19 @@ def fetch_markets(mic_list):
         loc_dt = dt.astimezone(tz)
         open_time = calendar.get_open_time(loc_dt.date()).strftime("%H:%M")
         close_time = calendar.get_close_time(loc_dt.date()).strftime("%H:%M")
+        dst = is_dst(loc_dt, tz)
+        dst_transitions = exchange.has_dst_transitions()
+        if (dst_transitions):
+            transitions = dst_transitions_by_timezone.get(loc_dt.tzname())
+            if not transitions:
+                next_dst_transition, previous_dst_transition = get_dst_transitions(loc_dt, tz)
+                dst_transitions_by_timezone[loc_dt.tzname()] = [next_dst_transition, previous_dst_transition]
+            else:
+                next_dst_transition = transitions[0]
+                previous_dst_transition = transitions[1]
+        else:
+            next_dst_transition = None
+            previous_dst_transition = None
 
         market = {
             'mic': exchange.get_mic(),
@@ -180,13 +234,25 @@ def fetch_markets(mic_list):
             'timezone': str(tz),
             'timezone_abbr': loc_dt.tzname(),
             'utc_offset': loc_dt.strftime("%z"),
-            'weekdays' : calendar.get_weekdays(),
-            'open_time' : open_time,
-            'close_time' : close_time,
+            'dst': dst,
+            'previous_dst_transition': previous_dst_transition,
+            'next_dst_transition': next_dst_transition,
+            'weekdays': calendar.get_weekdays(),
+            'open_time': open_time,
+            'close_time': close_time,
         }
 
         if not exchange.get_acronym():
             del market['acronym']
+
+        if not exchange.get_lei():
+            del market['lei']
+
+        if not market['next_dst_transition']:
+            del market['next_dst_transition']
+
+        if not market['previous_dst_transition']:
+            del market['previous_dst_transition']
 
         early_close_time = calendar.get_early_close_time(dt)
         if early_close_time:
@@ -401,7 +467,7 @@ def get_markets(request: Request,
 
     if "etag" not in response.headers:
         response.headers["etag"] = current_etag
-        response.headers["Cache-Control"] = "max-age=3600"
+        response.headers["Cache-Control"] = "max-age=300"
 
     return response
 
