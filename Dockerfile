@@ -1,4 +1,6 @@
-FROM python:3.12.2-slim-bookworm
+FROM python:3.12.3-slim-bookworm
+
+RUN apt-get update && apt-get install tzdata
 
 WORKDIR /code
 
