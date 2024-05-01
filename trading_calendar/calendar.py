@@ -228,7 +228,7 @@ class Calendar:
         date_str = str(ts.strftime('%Y-%m-%d'))
 
         try:
-            country_holiday = holidays.country_holidays(self.country_code)
+            country_holiday = holidays.utils.country_holidays(self.country_code, language='en_US')
             if country_holiday is None:
                 return None
 
@@ -237,7 +237,7 @@ class Calendar:
                 return name
 
             for subdivision in country_holiday.subdivisions:
-                subdivisions_holiday = holidays.country_holidays(self.country_code, subdiv=subdivision)
+                subdivisions_holiday = holidays.utils.country_holidays(self.country_code, subdiv=subdivision, language='en_US')
                 name = subdivisions_holiday.get(date_str)
                 if name is not None:
                     return name
