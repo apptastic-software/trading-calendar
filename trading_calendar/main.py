@@ -284,7 +284,7 @@ def fetch_status(mic_list):
 
             is_weekend = calendar.is_weekend(local_time)
             is_business_day = (not is_weekend) and (not holiday_name or (is_special_open or is_early_close)) 
-            is_open = local_time >= open_time and local_time < close_time and is_business_day
+            is_open = ((open_time < close_time and local_time >= open_time and local_time < close_time) or (open_time > close_time and (local_time >= open_time or local_time < close_time)) or (open_time == close_time)) and is_business_day
             status = Status.OPEN if is_open else Status.CLOSED
 
             status = {
