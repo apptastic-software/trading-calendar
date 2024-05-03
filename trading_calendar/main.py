@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from datetime import date, time, datetime, timedelta
 from zoneinfo import ZoneInfo
 from .exchanges import Exchanges as Exchanges
@@ -84,58 +84,60 @@ class Weekday(str, Enum):
     SUNDAY = 'Sunday'
 
 class MarketResponse(BaseModel):
-    mic: str
-    exchange: str
-    acronym: Optional[str]
-    lei: str
-    url: str
-    city: str
-    country: str
-    country_code: str
-    flag: str
-    region: str
-    timezone: str
-    timezone_abbr: str
-    utc_offset: str
-    dst: bool
-    previous_dst_transition: Optional[date]
-    next_dst_transition: Optional[date]
-    working_days : List[Weekday]
-    open_time: str
-    close_time: str
-    early_close_time: Optional[str]
+    mic: str = Field(examples=["XNYS"])
+    exchange: str = Field(examples=["New York Stock Exchange"])
+    acronym: Optional[str] = Field(examples=["NYSE"])
+    lei: str = Field(examples=["5493000F4ZO33MV32P92"])
+    url: str = Field(examples=["https://www.nyse.com/index"])
+    city: str = Field(examples=["New York"])
+    country: str = Field(examples=["New York"])
+    country_code: str = Field(examples=["US"])
+    flag: str = Field(examples=["🇺🇸"])
+    region: str = Field(examples=["North America"])
+    timezone: str = Field(examples=["America/New_York"])
+    timezone_abbr: str = Field(examples=["EDT"])
+    utc_offset: str = Field(examples=["-0400"])
+    dst: bool = Field(examples=[True])
+    previous_dst_transition: Optional[date] = Field(examples=["2024-03-10"])
+    next_dst_transition: Optional[date] = Field(examples=["2024-11-03"])
+    working_days : List[Weekday] = Field(examples=[["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]])
+    open_time: str = Field(examples=["09:30"])
+    close_time: str = Field(examples=["16:00"])
+    early_close_time: Optional[str] = Field(examples=["13:00"])
 
 class MarketStatusResponse(BaseModel):
-    mic: str
-    day_of_week: str
-    is_weekend : bool
-    is_business_day: bool
-    status: Status
-    is_early_close: Optional[bool]
-    local_time: datetime
-    open_time: Optional[datetime]
-    close_time: Optional[datetime]
-    holiday_name: Optional[str]
+    mic: str = Field(examples=["XNYS"])
+    day_of_week: str = Field(examples=["Wednesday"])
+    is_weekend : bool = Field(examples=[False])
+    is_business_day: bool = Field(examples=[True])
+    status: Status = Field(examples=["Open"])
+    is_early_close: Optional[bool] = Field(examples=[False])
+    local_time: datetime = Field(examples=["2024-05-01T11:05:21-04:00"])
+    open_time: Optional[datetime] = Field(examples=["2024-05-01T09:30:00-04:00"])
+    close_time: Optional[datetime] = Field(examples=["2024-05-01T16:00:00-04:00"])
+    holiday_name: Optional[str] = Field(default=None, examples=["Labor Day"])
 
 class TradingHoursResponse(BaseModel):
-    mic: str
-    date: str
-    day_of_week: str
-    is_early_close: bool
-    open_time: datetime
-    close_time: datetime
-    holiday_name: Optional[str]
+    mic: str = Field(examples=["XSTO"])
+    date: str = Field(examples=["2024-04-30"])
+    day_of_week: str = Field(examples=["Tuesday"])
+    is_early_close: bool = Field(examples=[True])
+    open_time: datetime = Field(examples=["2024-04-30T09:00:00+02:00"])
+    close_time: datetime = Field(examples=["2024-04-30T13:00:00+02:00"])
+    holiday_name: Optional[str] = Field(examples=["Day Before Labour Day"])
 
 class MarketHolidayResponse(BaseModel):
-    mic: str
-    date: str
-    day_of_week: str
-    is_weekend : bool
-    is_business_day: bool
-    holiday_name: Optional[str]
-    is_early_close: Optional[bool]
-    open_time: Optional[datetime]
-    close_time: Optional[datetime]
+    exchange: str = Field(examples=["New York Stock Exchange"])
+    flag: str = Field(examples=["🇺🇸"])
+    mic: str = Field(examples=["XNYS"])
+    date: str = Field(examples=["2024-11-29"])
+    day_of_week: str = Field(examples=["Friday"])
+    is_weekend : bool = Field(examples=[False])
+    is_business_day: bool = Field(examples=[True])
+    holiday_name: Optional[str] = Field(examples=["Black Friday"])
+    is_early_close: Optional[bool] = Field(examples=[True])
+    open_time: Optional[datetime] = Field(examples=["2024-11-29T09:30:00-05:00"])
+    close_time: Optional[datetime] = Field(examples=["2024-11-29T13:00:00-05:00"])
 
 
 exchanges = Exchanges()
@@ -448,7 +450,7 @@ def get_markets_etag(mic):
 @app.get("/api/v1/markets", response_model=List[MarketResponse] , tags=['Markets'])
 @limiter.limit(rate_limit)
 def get_markets(request: Request,
-                mic: str = Query(None, title="MIC code", description="Specify comma separated list of MIC codes for which market to show data for.", example="XNYS")):
+                mic: str = Query(None, title="MIC code", description="Optional list of comma separated MIC codes for which market to show data for. All market will be included if MIC code is not specified.", example="XNYS")):
     
     etag = request.headers.get("if-none-match")
     current_etag = get_markets_etag(mic)
@@ -475,7 +477,7 @@ def get_markets(request: Request,
 @app.get("/api/v1/markets/status", response_model=List[MarketStatusResponse], tags=['Market Status'])
 @limiter.limit(rate_limit)
 def get_market_status(request: Request,
-                      mic: str = Query(None, title="MIC code", description="Specify comma separated list of MIC codes for which market to show data for.", example="XNYS")):
+                      mic: str = Query(None, title="MIC code", description="Optional list of comma separated MIC codes for which market to show data for. All market will be included if MIC code is not specified.", example="XNYS")):
     
     if mic:
         mic = split_unique(mic)
@@ -495,7 +497,7 @@ def get_trading_hours_etag(mic, start, end):
 @app.get("/api/v1/markets/hours", response_model=List[TradingHoursResponse], tags=['Trading Hours'])
 @limiter.limit(rate_limit)
 def get_trading_hours(request: Request,
-                      mic: str = Query(None, title="MIC code", description="Specify comma separated list of MIC codes for which market to show data for.", example="XNYS"),
+                      mic: str = Query(None, title="MIC code", description="Optional list of comma separated MIC codes for which market to show data for. All market will be included if MIC code is not specified.", example="XNYS"),
                       start: date = Query(..., title="Start date", description="Show holidays starting at this date.", example=datetime.today().strftime("%Y-%m-%d")),
                       end: date = Query(..., title="End date", description="Show holidays until this date.", example=datetime.today().strftime("%Y-%m-%d"))):
 
