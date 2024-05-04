@@ -23,6 +23,8 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'currency_code' : 'USD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'true',
             },
             'XCBF' : {
@@ -36,6 +38,8 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'currency_code' : 'USD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'true',
             },
             'CMES' : {
@@ -49,6 +53,8 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'currency_code' : 'USD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'true',
             },
             'IEPA' : {
@@ -62,6 +68,8 @@ class Exchanges:
                 'country_code' : 'US',
                 'region' : 'North America',
                 'flag' : '🇺🇸',
+                'currency_code' : 'USD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'true',
             },
             'XTSE' : {
@@ -75,6 +83,8 @@ class Exchanges:
                 'country_code' : 'CA',
                 'region' : 'North America',
                 'flag' : '🇨🇦',
+                'currency_code' : 'CAD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'true',
             },
             'BVMF' : {
@@ -88,6 +98,8 @@ class Exchanges:
                 'country_code' : 'BR',
                 'region' : 'South America',
                 'flag' : '🇧🇷',
+                'currency_code' : 'BRL',
+                'currency_symbol' : 'R$',
                 'dst_transitions' : 'false',
             },
             'XBUE' : {
@@ -101,6 +113,8 @@ class Exchanges:
                 'country_code' : 'AR',
                 'region' : 'South America',
                 'flag' : '🇦🇷',
+                'currency_code' : 'ARS',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'false',
             },
             'XMEX' : {
@@ -114,6 +128,8 @@ class Exchanges:
                 'country_code' : 'MX',
                 'region' : 'South America',
                 'flag' : '🇲🇽',
+                'currency_code' : 'MXN',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'false',
             },
             'XSGO' : {
@@ -127,6 +143,8 @@ class Exchanges:
                 'country_code' : 'CL',
                 'region' : 'South America',
                 'flag' : '🇨🇱',
+                'currency_code' : 'CLP',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'true',
             },
             'XBOG' : {
@@ -140,6 +158,8 @@ class Exchanges:
                 'country_code' : 'CO',
                 'region' : 'South America',
                 'flag' : '🇨🇴',
+                'currency_code' : 'COP',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'true',
             },
             'XLIM' : {
@@ -153,6 +173,8 @@ class Exchanges:
                 'country_code' : 'PE',
                 'region' : 'South America',
                 'flag' : '🇵🇪',
+                'currency_code' : 'PEN',
+                'currency_symbol' : 'S/',
                 'dst_transitions' : 'false',
             },
             'XICE' : {
@@ -166,6 +188,8 @@ class Exchanges:
                 'country_code' : 'IS',
                 'region' : 'Europe',
                 'flag' : '🇮🇸',
+                'currency_code' : 'ISK',
+                'currency_symbol' : 'kr',
                 'dst_transitions' : 'false',
             },
             'XOSL' : {
@@ -179,6 +203,8 @@ class Exchanges:
                 'country_code' : 'NO',
                 'region' : 'Europe',
                 'flag' : '🇳🇴',
+                'currency_code' : 'NOK',
+                'currency_symbol' : 'kr',
                 'dst_transitions' : 'true',
             },
             'XSTO' : {
@@ -192,6 +218,8 @@ class Exchanges:
                 'country_code' : 'SE',
                 'region' : 'Europe',
                 'flag' : '🇸🇪',
+                'currency_code' : 'SEK',
+                'currency_symbol' : 'kr',
                 'dst_transitions' : 'true',
             },
             'XHEL' : {
@@ -205,6 +233,8 @@ class Exchanges:
                 'country_code' : 'FI',
                 'region' : 'Europe',
                 'flag' : '🇫🇮',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XCSE' : {
@@ -218,6 +248,8 @@ class Exchanges:
                 'country_code' : 'DK',
                 'region' : 'Europe',
                 'flag' : '🇩🇰',
+                'currency_code' : 'DKK',
+                'currency_symbol' : 'kr',
                 'dst_transitions' : 'true',
             },
             'XLON' : {
@@ -231,6 +263,8 @@ class Exchanges:
                 'country_code' : 'GB',
                 'region' : 'Europe',
                 'flag' : '🇬🇧',
+                'currency_code' : 'GBP',
+                'currency_symbol' : '£',
                 'dst_transitions' : 'true',
             },
             'XDUB' : {
@@ -244,6 +278,8 @@ class Exchanges:
                 'country_code' : 'IE',
                 'region' : 'Europe',
                 'flag' : '🇮🇪',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XAMS' : {
@@ -257,6 +293,8 @@ class Exchanges:
                 'country_code' : 'NL',
                 'region' : 'Europe',
                 'flag' : '🇳🇱',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XBRU' : {
@@ -270,6 +308,8 @@ class Exchanges:
                 'country_code' : 'BE',
                 'region' : 'Europe',
                 'flag' : '🇧🇪',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XFRA' : {
@@ -283,6 +323,8 @@ class Exchanges:
                 'country_code' : 'DE',
                 'region' : 'Europe',
                 'flag' : '🇩🇪',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XETR' : {
@@ -296,6 +338,8 @@ class Exchanges:
                 'country_code' : 'DE',
                 'region' : 'Europe',
                 'flag' : '🇩🇪',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XSWX' : {
@@ -309,6 +353,8 @@ class Exchanges:
                 'country_code' : 'CH',
                 'region' : 'Europe',
                 'flag' : '🇨🇭',
+                'currency_code' : 'CHF',
+                'currency_symbol' : '₣',
                 'dst_transitions' : 'true',
             },
             'XWBO' : {
@@ -322,6 +368,8 @@ class Exchanges:
                 'country_code' : 'AT',
                 'region' : 'Europe',
                 'flag' : '🇦🇹',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XWAR' : {
@@ -335,6 +383,8 @@ class Exchanges:
                 'country_code' : 'PL',
                 'region' : 'Europe',
                 'flag' : '🇵🇱',
+                'currency_code' : 'PLN',
+                'currency_symbol' : 'zł',
                 'dst_transitions' : 'true',
             },
             'XPRA' : {
@@ -348,6 +398,8 @@ class Exchanges:
                 'country_code' : 'CZ',
                 'region' : 'Europe',
                 'flag' : '🇨🇿',
+                'currency_code' : 'CZK',
+                'currency_symbol' : 'Kč',
                 'dst_transitions' : 'true',
             },
             'XMOS' : {
@@ -361,6 +413,8 @@ class Exchanges:
                 'country_code' : 'RU',
                 'region' : 'Europe',
                 'flag' : '🇷🇺',
+                'currency_code' : 'RUB',
+                'currency_symbol' : '₽',
                 'dst_transitions' : 'false',
             },
             'AIXK' : {
@@ -374,6 +428,8 @@ class Exchanges:
                 'country_code' : 'KZ',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇰🇿',
+                'currency_code' : 'KZT',
+                'currency_symbol' : '₸',
                 'dst_transitions' : 'false',
             },
             'XLIS' : {
@@ -387,6 +443,8 @@ class Exchanges:
                 'country_code' : 'PT',
                 'region' : 'Europe',
                 'flag' : '🇵🇹',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XPAR' : {
@@ -400,6 +458,8 @@ class Exchanges:
                 'country_code' : 'FR',
                 'region' : 'Europe',
                 'flag' : '🇫🇷',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XMAD' : {
@@ -413,6 +473,8 @@ class Exchanges:
                 'country_code' : 'ES',
                 'region' : 'Europe',
                 'flag' : '🇪🇸',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XMIL' : {
@@ -426,6 +488,8 @@ class Exchanges:
                 'country_code' : 'IT',
                 'region' : 'Europe',
                 'flag' : '🇮🇹',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XBUD' : {
@@ -439,6 +503,8 @@ class Exchanges:
                 'country_code' : 'HU',
                 'region' : 'Europe',
                 'flag' : '🇭🇺',
+                'currency_code' : 'HUF',
+                'currency_symbol' : 'Ft',
                 'dst_transitions' : 'true',
             },
             'XBSE' : {
@@ -452,6 +518,8 @@ class Exchanges:
                 'country_code' : 'RO',
                 'region' : 'Europe',
                 'flag' : '🇷🇴',
+                'currency_code' : 'RON',
+                'currency_symbol' : 'lei',
                 'dst_transitions' : 'true',
             },            
             'ASEX' : {
@@ -465,6 +533,8 @@ class Exchanges:
                 'country_code' : 'GR',
                 'region' : 'Europe',
                 'flag' : '🇬🇷',
+                'currency_code' : 'EUR',
+                'currency_symbol' : '€',
                 'dst_transitions' : 'true',
             },
             'XIST' : {
@@ -478,6 +548,8 @@ class Exchanges:
                 'country_code' : 'TR',
                 'region' : 'Europe',
                 'flag' : '🇹🇷',
+                'currency_code' : 'TRY',
+                'currency_symbol' : '₺',
                 'dst_transitions' : 'false',
             },
             'XTAE' : {
@@ -491,6 +563,8 @@ class Exchanges:
                 'country_code' : 'IL',
                 'region' : 'Europe',
                 'flag' : '🇮🇱',
+                'currency_code' : 'ILS',
+                'currency_symbol' : '₪',
                 'dst_transitions' : 'true',
             },
             'XBOM' : {
@@ -504,6 +578,8 @@ class Exchanges:
                 'country_code' : 'IN',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇮🇳',
+                'currency_code' : 'INR',
+                'currency_symbol' : '₹',
                 'dst_transitions' : 'false',
             },
             'XKAR' : {
@@ -517,6 +593,8 @@ class Exchanges:
                 'country_code' : 'PK',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇵🇰',
+                'currency_code' : 'PKR',
+                'currency_symbol' : '₨',
                 'dst_transitions' : 'false',
             },
             'XSAU' : {
@@ -530,6 +608,8 @@ class Exchanges:
                 'country_code' : 'SA',
                 'region' : 'Middle East',
                 'flag' : '🇸🇦',
+                'currency_code' : 'SAR',
+                'currency_symbol' : '﷼',
                 'dst_transitions' : 'false',
             },
             'XJSE' : {
@@ -543,6 +623,8 @@ class Exchanges:
                 'country_code' : 'ZA',
                 'region' : 'Africa',
                 'flag' : '🇿🇦',
+                'currency_code' : 'ZAR',
+                'currency_symbol' : 'R',
                 'dst_transitions' : 'false',
             },
             'XHKG' : {
@@ -556,6 +638,8 @@ class Exchanges:
                 'country_code' : 'HK',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇭🇰',
+                'currency_code' : 'HKD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'false',
             },
             'XSES' : {
@@ -569,6 +653,8 @@ class Exchanges:
                 'country_code' : 'SG',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇸🇬',
+                'currency_code' : 'SGD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'false',
             },
             'XSHG' : {
@@ -582,6 +668,8 @@ class Exchanges:
                 'country_code' : 'CN',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇨🇳',
+                'currency_code' : 'CNY',
+                'currency_symbol' : '¥',
                 'dst_transitions' : 'false',
             },
             'XTAI' : {
@@ -595,6 +683,8 @@ class Exchanges:
                 'country_code' : 'TW',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇹🇼',
+                'currency_code' : 'TWD',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'false',
             },
             'XKLS' : {
@@ -608,6 +698,8 @@ class Exchanges:
                 'country_code' : 'MY',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇲🇾',
+                'currency_code' : 'MYR',
+                'currency_symbol' : '$',
                 'dst_transitions' : 'false',
             },
             'XIDX' : {
@@ -621,6 +713,8 @@ class Exchanges:
                 'country_code' : 'ID',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇮🇩',
+                'currency_code' : 'IDR',
+                'currency_symbol' : 'Rp',
                 'dst_transitions' : 'false',
             },
             'XBKK' : {
@@ -634,6 +728,8 @@ class Exchanges:
                 'country_code' : 'TH',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇹🇭',
+                'currency_code' : 'THB',
+                'currency_symbol' : '฿',
                 'dst_transitions' : 'false',
             },
             'XPHS' : {
@@ -647,6 +743,8 @@ class Exchanges:
                 'country_code' : 'PH',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇵🇭',
+                'currency_code' : 'PHP',
+                'currency_symbol' : '₱',
                 'dst_transitions' : 'false',
             },
             'XKRX' : {
@@ -660,6 +758,8 @@ class Exchanges:
                 'country_code' : 'KR',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇰🇷',
+                'currency_code' : 'KRW',
+                'currency_symbol' : '₩',
                 'dst_transitions' : 'false',
             },
             'XTKS' : {
@@ -673,6 +773,8 @@ class Exchanges:
                 'country_code' : 'JP',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇯🇵',
+                'currency_code' : 'JPY',
+                'currency_symbol' : '¥',
                 'dst_transitions' : 'false',
             },
             'XASX' : {
@@ -686,6 +788,8 @@ class Exchanges:
                 'country_code' : 'AU',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇦🇺',
+                'currency_code' : '$',
+                'currency_symbol' : 'AUD',
                 'dst_transitions' : 'true',
             },
             'XNZE' : {
@@ -699,6 +803,8 @@ class Exchanges:
                 'country_code' : 'NZ',
                 'region' : 'Asia-Pacific',
                 'flag' : '🇳🇿',
+                'currency_code' : '$',
+                'currency_symbol' : 'NZD',
                 'dst_transitions' : 'true',
             }
         }
@@ -722,6 +828,8 @@ class Exchanges:
                 flag = exchange.get('flag'),
                 region = exchange.get('region'),
                 dst_transitions = exchange.get('dst_transitions').lower() == 'true',
+                currency_code = exchange.get('currency_code'),
+                currency_symbol = exchange.get('currency_symbol'),
                 calendar = Calendar(ecals.get_calendar(mic), exchange.get('country_code'))
             )
 
