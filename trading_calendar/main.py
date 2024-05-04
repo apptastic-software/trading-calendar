@@ -93,6 +93,8 @@ class MarketResponse(BaseModel):
     country: str = Field(examples=["New York"])
     country_code: str = Field(examples=["US"])
     flag: str = Field(examples=["🇺🇸"])
+    currency_code: str = Field(examples=["USD"])
+    currency_symbol: str = Field(examples=["$"])
     region: str = Field(examples=["North America"])
     timezone: str = Field(examples=["America/New_York"])
     timezone_abbr: str = Field(examples=["EDT"])
