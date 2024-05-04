@@ -232,6 +232,8 @@ def fetch_markets(mic_list):
             'country': exchange.get_country(),
             'country_code': exchange.get_country_code(),
             'flag': exchange.get_flag(),
+            'currency_code': exchange.get_currency_code(),
+            'currency_symbol': exchange.get_currency_symbol(),
             'region': exchange.get_region(),
             'timezone': str(tz),
             'timezone_abbr': loc_dt.tzname(),
