@@ -1,7 +1,7 @@
 Trading Calendar
 ================
 
-[![Download](https://img.shields.io/badge/version-0.0.18-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
+[![Download](https://img.shields.io/badge/version-0.0.19-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)
 
 Free market calendar REST API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
@@ -12,7 +12,6 @@ Data includes:
 * Support for timezones and daylight savings time transitions
 * Definitions for weekends for each market
 * Open and close time for each market
-* Support for irregular and interday trading hours
 * Current market status (open or closed based on static schedule).
 
 ## Running it locally
