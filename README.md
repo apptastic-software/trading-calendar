@@ -56,8 +56,8 @@ http://127.0.0.1:8001/api/v1/openapi.json
 
 ## Calendar Support
 
-| Exchange                        | MIC      | Country        | Exchange Website                                                 |
-| ------------------------------- | -------- | -------------- | ---------------------------------------------------------------- |
+| Exchange                        | MIC      | Country          | Exchange Website                                               |
+| ------------------------------- | -------- | ---------------- | -------------------------------------------------------------- |
 | New York Stock Exchange         | XNYS     | 🇺🇸 USA            | https://www.nyse.com/index                                    |
 | CBOE Futures                    | XCBF     | 🇺🇸 USA            | https://markets.cboe.com/us/futures/overview                  |
 | Chicago Mercantile Exchange     | CMES     | 🇺🇸 USA            | https://www.cmegroup.com                                      |
@@ -73,6 +73,7 @@ http://127.0.0.1:8001/api/v1/openapi.json
 | Deutsche Börse Xetra            | XETR     | 🇩🇪 Germany        | https://www.xetra.com/xetra-en                                |
 | European Energy Exchange        | XEEE     | 🇩🇪 Germany        | https://www.eex.com                                           |
 | Hamburg Stock Exchange          | XHAM     | 🇩🇪 Germany        | https://www.boerse-hamburg.de                                 |
+| Duesseldorf Stock Exchange      | XDUS     | 🇩🇪 Germany        | https://www.boerse-duesseldorf.de                             |
 | SIX Swiss Exchange              | XSWX     | 🇨🇭 Switzerland    | https://www.six-group.com/exchanges/index.html                |
 | Tokyo Stock Exchange            | XTKS     | 🇯🇵 Japan          | https://www.jpx.co.jp/english                                 |
 | Austrialian Securities Exchange | XASX     | 🇦🇺 Australia      | https://www.asx.com.au                                        |
