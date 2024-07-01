@@ -127,10 +127,6 @@ class Calendar:
         return None
     
     def get_timezone(self):
-        if self.country_code == 'DE':
-            return ZoneInfo('Europe/Berlin')
-        elif self.country_code == 'NZ':
-            return ZoneInfo('Pacific/Auckland')
         return self.calendar.tz
 
     def get_open_time(self, ts):
