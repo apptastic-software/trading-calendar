@@ -72,6 +72,7 @@ http://127.0.0.1:8001/api/v1/openapi.json
 | Frankfurt Stock Exchange        | XFRA     | 🇩🇪 Germany        | https://en.boerse-frankfurt.de                                |
 | Deutsche Börse Xetra            | XETR     | 🇩🇪 Germany        | https://www.xetra.com/xetra-en                                |
 | European Energy Exchange        | XEEE     | 🇩🇪 Germany        | https://www.eex.com                                           |
+| Hamburg Stock Exchange          | XHAM     | 🇩🇪 Germany        | https://www.boerse-hamburg.de                                 |
 | SIX Swiss Exchange              | XSWX     | 🇨🇭 Switzerland    | https://www.six-group.com/exchanges/index.html                |
 | Tokyo Stock Exchange            | XTKS     | 🇯🇵 Japan          | https://www.jpx.co.jp/english                                 |
 | Austrialian Securities Exchange | XASX     | 🇦🇺 Australia      | https://www.asx.com.au                                        |
