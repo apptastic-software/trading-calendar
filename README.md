@@ -77,7 +77,7 @@ http://127.0.0.1:8001/api/v1/openapi.json
 | SIX Swiss Exchange              | XSWX     | 🇨🇭 Switzerland    | https://www.six-group.com/exchanges/index.html                |
 | Tokyo Stock Exchange            | XTKS     | 🇯🇵 Japan          | https://www.jpx.co.jp/english                                 |
 | Austrialian Securities Exchange | XASX     | 🇦🇺 Australia      | https://www.asx.com.au                                        |
-| Bolsa de Madrid                 | XMAD     | 🇪🇸 Spain          | http://www.bolsamadrid.es/ing/aspx/Portada/Portada.aspx       |
+| Bolsa de Madrid                 | XMAD     | 🇪🇸 Spain          | https://www.bolsamadrid.es/ing/aspx/Portada/Portada.aspx      |
 | Borsa Italiana                  | XMIL     | 🇮🇹 Italy          | https://www.borsaitaliana.it/homepage/homepage.en.htm         |
 | New Zealand Exchange            | XNZE     | 🇳🇿 New Zealand    | https://www.nzx.com                                           |
 | Wiener Borse                    | XWBO     | 🇦🇹 Austria        | https://www.wienerborse.at/en                                 |
@@ -89,7 +89,7 @@ http://127.0.0.1:8001/api/v1/openapi.json
 | Irish Stock Exchange            | XDUB     | 🇮🇪 Ireland        | https://www.euronext.com/en/markets/dublin                    |
 | Bombay Stock Exchange           | XBOM     | 🇮🇳 India          | https://www.bseindia.com                                      |
 | Singapore Exchange              | XSES     | 🇸🇬 Singapore      | https://www.sgx.com                                           |
-| Shanghai Stock Exchange         | XSHG     | 🇨🇳 China          | http://english.sse.com.cn                                     |
+| Shanghai Stock Exchange         | XSHG     | 🇨🇳 China          | https://english.sse.com.cn                                    |
 | Korea Exchange                  | XKRX     | 🇰🇷 South Korea    | https://global.krx.co.kr                                      |
 | Iceland Stock Exchange          | XICE     | 🇮🇸 Iceland        | https://www.nasdaqomxnordic.com                               |
 | Poland Stock Exchange           | XWAR     | 🇵🇱 Poland         | https://www.gpw.pl                                            |

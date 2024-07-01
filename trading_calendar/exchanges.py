@@ -707,7 +707,7 @@ class Exchanges:
                 'name' : 'Shanghai Stock Exchange',
                 'acronym' : 'SSE',
                 'lei' : '300300LRJ5FEZ23N8725',
-                'url' : 'http://www.szse.cn/English/index.html',
+                'url' : 'https://www.szse.cn/English/index.html',
                 'city' : 'Shanghai',
                 'country' : 'China',
                 'country_code' : 'CN',
