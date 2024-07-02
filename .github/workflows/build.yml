@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+    tags-ignore:
+      - 'v*'
+jobs:
+  build:
+    name: 🏗️ Build
+    runs-on: ubuntu-latest
+    outputs:
+      next-version: ${{ steps.version.outputs.next-version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip' # caching pip dependencies
+      
+      - run: pip install -r requirements.txt
+
+      - name: Get version number 🔢
+        id: get-version
+        uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Store next version 🔢
+        id: version
+        run: |
+          echo "next-version=${{ steps.get-version.outputs.tag_name }}" | cut -c -13,15- >> $GITHUB_OUTPUT
+
+      - name: Print next version 🔢
+        run: |
+          echo "Next version: ${{ steps.version.outputs.next-version }}"
