@@ -13,11 +13,30 @@ from zoneinfo import ZoneInfo
 from .exchanges import Exchanges as Exchanges
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
+from contextlib import asynccontextmanager
 
 def version():
     return "0.0.21"
 
 print("Trading Calendar version: {}".format(version()))
+
+
+class Weekday(str, Enum):
+    MONDAY = 'Monday'
+    TUESDAY = 'Tuesday'
+    WEDNESDAY = 'Wednesday'
+    THURSDAY = 'Thursday'
+    FRIDAY = 'Friday'
+    SATURDAY = 'Saturday'
+    SUNDAY = 'Sunday'
+
+exchanges = Exchanges()
+available_mic = set()
+all_mic_list = []
+weekday_name = [Weekday.MONDAY, Weekday.TUESDAY, Weekday.WEDNESDAY, Weekday.THURSDAY, Weekday.FRIDAY, Weekday.SATURDAY, Weekday.SUNDAY]
+rate_limit = "{}/minute".format(int(os.environ.get('RATE_LIMIT', 50000)))
+max_days = int(os.environ.get('MAX_DAYS', 366))
+
 
 tags_metadata = [
     {
@@ -39,6 +58,17 @@ tags_metadata = [
 ]
 
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Load trading calendars on startup
+    exchanges.load()
+    all_mic_list.clear()
+    all_mic_list.extend(list(dict.fromkeys(exchanges.get_mic_list())))
+    available_mic.update(exchanges.get_mic_list())
+    yield
+    # Clean up trading calendars on shutdown
+
+
 description = """
 Market calendars with the holiday, late open and early close. Over 50+ unique exchange calendars for global equity and futures markets.
 """
@@ -57,6 +87,7 @@ app = FastAPI(
         "url": "https://raw.githubusercontent.com/apptastic-software/trading-calendar/main/LICENSE",
     },
     openapi_tags=tags_metadata, openapi_url="/api/v1/openapi.json",
+    lifespan=lifespan
 )
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
@@ -73,15 +104,6 @@ app.add_middleware(GZipMiddleware, minimum_size=500)
 class Status(str, Enum):
     OPEN = 'Open'
     CLOSED = 'Closed'
-
-class Weekday(str, Enum):
-    MONDAY = 'Monday'
-    TUESDAY = 'Tuesday'
-    WEDNESDAY = 'Wednesday'
-    THURSDAY = 'Thursday'
-    FRIDAY = 'Friday'
-    SATURDAY = 'Saturday'
-    SUNDAY = 'Sunday'
 
 class MarketResponse(BaseModel):
     mic: str = Field(examples=["XNYS"])
@@ -140,14 +162,6 @@ class MarketHolidayResponse(BaseModel):
     is_early_close: Optional[bool] = Field(examples=[True])
     open_time: Optional[datetime] = Field(examples=["2024-11-29T09:30:00-05:00"])
     close_time: Optional[datetime] = Field(examples=["2024-11-29T13:00:00-05:00"])
-
-
-exchanges = Exchanges()
-available_mic = set()
-all_mic_list = []
-weekday_name = [Weekday.MONDAY, Weekday.TUESDAY, Weekday.WEDNESDAY, Weekday.THURSDAY, Weekday.FRIDAY, Weekday.SATURDAY, Weekday.SUNDAY]
-rate_limit = "{}/minute".format(int(os.environ.get('RATE_LIMIT', 50000)))
-max_days = int(os.environ.get('MAX_DAYS', 366))
 
 
 def split_unique(text, delimiter=","):
@@ -437,13 +451,6 @@ def validate_request_start_end(start, end):
     delta = end - start
     if delta.days > max_days:
         raise HTTPException(status_code=422, detail=[{"loc": ["query", "start", "end"], "msg": "Maximum {} days between start date and end date".format(max_days), "type": "value_error.date"}])
-
-
-@app.on_event("startup")
-def startup_event():
-    exchanges.load()
-    all_mic_list.extend(exchanges.get_mic_list())
-    available_mic.update(exchanges.get_mic_list())
 
 
 def get_markets_etag(mic):
