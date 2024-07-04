@@ -1,6 +1,6 @@
 Trading Calendar
 ================
-
+[![Build](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml/badge.svg)](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml)
 [![Download](https://img.shields.io/badge/version-0.0.21-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)
 
