@@ -33,6 +33,11 @@ jobs:
           pip install pytest pytest-cov
           pytest -v --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+    
       - name: Get version number 🔢
         id: get-version
         uses: release-drafter/release-drafter@v6
