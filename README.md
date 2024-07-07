@@ -1,10 +1,11 @@
 Trading Calendar
 ================
 [![Build](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml/badge.svg)](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml)
+[![codecov](https://codecov.io/github/apptastic-software/trading-calendar/graph/badge.svg?token=75QZNYMEOI)](https://codecov.io/github/apptastic-software/trading-calendar)
 [![Download](https://img.shields.io/badge/version-0.0.21-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)
 
-Free market calendar REST API with holiday, late open, and early close. Over 50+ unique exchange calendars for global equity and futures markets.
+Free market calendar REST API with holiday, late open, and early close. Over [50+ unique exchange calendars](#calendars) for global equity and futures markets.
 
 Data includes:
 
@@ -54,7 +55,7 @@ OpenAPI 3.1 specification:
 http://127.0.0.1:8001/api/v1/openapi.json
 ```
 
-## Calendar Support
+## Calendars
 
 | Exchange                        | MIC      | Country          | Exchange Website                                               |
 | ------------------------------- | -------- | ---------------- | -------------------------------------------------------------- |
@@ -116,5 +117,30 @@ http://127.0.0.1:8001/api/v1/openapi.json
 | Bucharest Stock Exchange        | XBSE     | 🇷🇴 Romania        | https://www.bvb.ro                                            |
 
 > Note that exchange calendars are defined by their [ISO-10383](https://www.iso20022.org/10383/iso-10383-market-identifier-codes) market identifier code (MIC).
+
+License
+-------
+
+    MIT License
+    
+    Copyright (c) 2024, Apptastic Software
+    
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
 
 [1]: https://hub.docker.com/r/apptasticsoftware/trading-calendar
