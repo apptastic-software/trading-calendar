@@ -120,3 +120,11 @@ def test_holidays_start_date_after_end_date(client):
     response = client.get("/api/v1/markets/holidays?mic=XNYS&start=2024-07-04&end=2024-07-03")
     assert response.status_code == 422
 
+def test_holidays_get_holiday_name_1(client):
+    response = client.get("/api/v1/markets/holidays?mic=XHKG&start=2024-02-10&end=2024-02-10")
+    assert response.status_code == 200
+
+def test_holidays_get_holiday_name_2(client):
+    response = client.get("/api/v1/markets/holidays?mic=XKLS&start=2024-01-25&end=2024-01-25")
+    assert response.status_code == 200
+    
