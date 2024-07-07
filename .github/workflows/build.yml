@@ -30,8 +30,8 @@ jobs:
 
       - name: Build and test 🏗️
         run: |
-          pip install pytest pytest-cov
-          pytest -v --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+          pip install pytest pytest-cov coverage codecov
+          pytest -v --doctest-modules --junitxml=junit/test-results.xml --cov=trading_calendar --cov-report=xml --cov-report=html
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v4.0.1
