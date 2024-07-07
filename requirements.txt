@@ -6,4 +6,3 @@ slowapi>=0.1.9,<1.0.0
 email-validator>=2.2.0,<3.0.0
 exchange_calendars>=4.5.5,<5.0.0
 holidays>=0.51,<1.0
-pytest>=8.2.2,<9.0.0
