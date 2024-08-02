@@ -8,6 +8,9 @@ COPY ./requirements.txt /code/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
+RUN useradd -u 1001 tc
+USER 1001
+
 COPY ./trading_calendar /code/trading_calendar
 
 CMD ["uvicorn", "trading_calendar.main:app", "--host", "0.0.0.0", "--port", "80"]
