@@ -41,9 +41,6 @@ jobs:
       - name: Get version number 🔢
         id: get-version
         uses: release-drafter/release-drafter@v6
-        with:
-          version: 0.0.22
-          tag: v0.0.22
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
