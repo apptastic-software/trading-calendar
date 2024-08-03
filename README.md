@@ -2,10 +2,10 @@ Trading Calendar
 ================
 [![Build](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml/badge.svg)](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/apptastic-software/trading-calendar/graph/badge.svg?token=75QZNYMEOI)](https://codecov.io/github/apptastic-software/trading-calendar)
-[![Download](https://img.shields.io/badge/version-0.0.21-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
+[![Download](https://img.shields.io/badge/version-0.0.22-blue)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)
 
-Free market calendar REST API with holiday, late open, and early close. Over [50+ unique exchange calendars](#calendars) for global equity and futures markets.
+Free trading calendar REST API with holiday, late open, and early close. Over [50 unique exchange calendars](#calendars) for global equity and futures markets.
 
 Data includes:
 
@@ -52,7 +52,7 @@ http://127.0.0.1:8000/redoc
 ### OpenAPI
 OpenAPI 3.1 specification:
 ```
-http://127.0.0.1:8001/api/v1/openapi.json
+http://127.0.0.1:8000/api/v1/openapi.json
 ```
 
 ## Calendars
