@@ -1,54 +1,56 @@
-name: Build
+# This workflow will check pull request and run tests
+
+name: Pull Request Check
 
 on:
-  push:
-    branches: [ main ]
-    tags-ignore:
-      - 'v*'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  checks: write
+  pull-requests: write
+
 jobs:
   build:
-    name: 🏗️ Build
+    name: 🛂 Pull Request Check
+    timeout-minutes: 20
     runs-on: ubuntu-latest
-    outputs:
-      next-version: ${{ steps.version.outputs.next-version }}
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository ⚙️
+        uses: actions/checkout@v4
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
 
       - name: Setup Python ⚙️
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip' # caching pip dependencies
-      
+        
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-
+  
       - name: Install dependencies ⚙️ 
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
+  
       - name: Build and test 🏗️
         run: |
           pip install httpx pytest pytest-cov coverage codecov
           pytest -v --doctest-modules --junitxml=junit/test-results.xml --cov=trading_calendar --cov-report=xml --cov-report=html
+  
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: |
+            junit/test-results.xml
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-    
-      - name: Get version number 🔢
-        id: get-version
-        uses: release-drafter/release-drafter@v6
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Store next version 🔢
-        id: version
-        run: |
-          echo "next-version=${{ steps.get-version.outputs.tag_name }}" | cut -c -13,15- >> $GITHUB_OUTPUT
-
-      - name: Print next version 🔢
-        run: |
-          echo "Next version: ${{ steps.version.outputs.next-version }}"
