@@ -30,7 +30,7 @@ jobs:
 
       - name: Build and test 🏗️
         run: |
-          pip install pytest pytest-cov coverage codecov
+          pip install httpx pytest pytest-cov coverage codecov
           pytest -v --doctest-modules --junitxml=junit/test-results.xml --cov=trading_calendar --cov-report=xml --cov-report=html
 
       - name: Upload coverage reports
