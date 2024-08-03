@@ -16,7 +16,7 @@ from fastapi.middleware.gzip import GZipMiddleware
 from contextlib import asynccontextmanager
 
 def version():
-    return "0.0.21"
+    return "0.0.22"
 
 print("Trading Calendar version: {}".format(version()))
 
