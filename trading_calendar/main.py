@@ -40,10 +40,6 @@ max_days = int(os.environ.get('MAX_DAYS', 366))
 
 tags_metadata = [
     {
-        "name": "Version",
-        "description": "Get the API version.",
-    },
-    {
         "name": "Markets",
         "description": "Get details about the markets available in this API.",
     },
@@ -58,6 +54,10 @@ tags_metadata = [
     {
         "name": "Market Holidays",
         "description": "Get market holidays. It takes half-days into account.",
+    },
+    {
+        "name": "Version",
+        "description": "Get the API version.",
     },
 ]
 
@@ -462,9 +462,6 @@ def get_markets_etag(mic):
     mic_str = mic_str.replace(",", "")
     return "markets_" + version() + mic_str
 
-@app.get("/api/v1/version", tags=['Version'])
-def get_version():
-    return {"version": app.version}
 
 @app.get("/api/v1/markets", response_model=List[MarketResponse], tags=['Markets'])
 @limiter.limit(rate_limit)
@@ -577,3 +574,8 @@ def get_market_holidays(request: Request,
         response.headers["Cache-Control"] = "max-age=3600"
 
     return response
+
+
+@app.get("/api/v1/version", tags=['Version'])
+def get_version():
+    return {"version": app.version}
