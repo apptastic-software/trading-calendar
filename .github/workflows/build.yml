@@ -52,3 +52,32 @@ jobs:
       - name: Print next version 🔢
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
+
+  documentation:
+    name: 📚 Publish API documentation
+    needs: [build]
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.event_name != 'schedule' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate OpenAPI specification 📝
+        uses: column-st/fastapi-openapi-specs-action@v1.0.2
+        with:
+          moduleDir: trading_calendar
+          outputExtension: json
+
+      - name: Generate API documentation 📝
+        uses: seeebiii/redoc-cli-github-action@v10
+        with:
+          args: 'bundle openapi.json -o docs/api-doc/openapi.html'
+
+      - name: Deploy API documentation 📚
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs/api-doc
+          target-folder: api-doc/${{ needs.build.outputs.next-version }}-SNAPSHOT
+          commit-message: Publishing API doc
+          clean: true
+          dry-run: false
