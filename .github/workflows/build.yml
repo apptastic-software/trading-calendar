@@ -54,7 +54,7 @@ jobs:
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
   documentation:
-    name: 📚 Publish API documentation
+    name: 📚 Publish API doc
     needs: [build]
     if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.event_name != 'schedule' }}
     runs-on: ubuntu-latest
@@ -67,12 +67,12 @@ jobs:
           moduleDir: trading_calendar
           outputExtension: json
 
-      - name: Generate API documentation 📝
+      - name: Generate API doc 📝
         uses: seeebiii/redoc-cli-github-action@v10
         with:
-          args: 'bundle openapi.json -o docs/api-doc/openapi.html'
+          args: 'bundle openapi.json -o docs/api-doc/index.html'
 
-      - name: Deploy API documentation 📚
+      - name: Deploy API doc 📚
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
