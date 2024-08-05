@@ -40,6 +40,10 @@ max_days = int(os.environ.get('MAX_DAYS', 366))
 
 tags_metadata = [
     {
+        "name": "Version",
+        "description": "Get the API version.",
+    },
+    {
         "name": "Markets",
         "description": "Get details about the markets available in this API.",
     },
@@ -458,7 +462,11 @@ def get_markets_etag(mic):
     mic_str = mic_str.replace(",", "")
     return "markets_" + version() + mic_str
 
-@app.get("/api/v1/markets", response_model=List[MarketResponse] , tags=['Markets'])
+@app.get("/api/v1/version", tags=['Version'])
+def get_version():
+    return {"version": app.version}
+
+@app.get("/api/v1/markets", response_model=List[MarketResponse], tags=['Markets'])
 @limiter.limit(rate_limit)
 def get_markets(request: Request,
                 mic: str = Query(None, title="MIC code", description="Optional list of comma separated MIC codes for which market to show data for. All market will be included if MIC code is not specified.", example="XNYS")):
