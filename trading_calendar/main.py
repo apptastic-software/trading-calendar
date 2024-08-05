@@ -463,7 +463,7 @@ def get_markets_etag(mic):
     return "markets_" + version() + mic_str
 
 @app.get("/api/v1/version", tags=['Version'])
-def version():
+def get_version():
     return {"version": app.version}
 
 @app.get("/api/v1/markets", response_model=List[MarketResponse], tags=['Markets'])
