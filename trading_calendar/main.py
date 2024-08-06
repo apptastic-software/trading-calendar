@@ -75,7 +75,7 @@ async def lifespan(app: FastAPI):
 
 
 description = """
-Market calendars with the holiday, late open and early close. Over 50+ unique exchange calendars for global equity and futures markets.
+Trading calendar REST API with holiday, late open, and early close. Over 50 unique exchange calendars for global equity and futures markets.
 """
 limiter = Limiter(key_func=get_remote_address, headers_enabled=True, enabled='RATE_LIMIT' in os.environ)
 app = FastAPI(
@@ -167,6 +167,9 @@ class MarketHolidayResponse(BaseModel):
     is_early_close: Optional[bool] = Field(examples=[True])
     open_time: Optional[datetime] = Field(examples=["2024-11-29T09:30:00-05:00"])
     close_time: Optional[datetime] = Field(examples=["2024-11-29T13:00:00-05:00"])
+
+class VersionResponse(BaseModel):
+    version: str = Field(examples=[version()])
 
 
 def split_unique(text, delimiter=","):
@@ -577,6 +580,6 @@ def get_market_holidays(request: Request,
     return response
 
 
-@app.get("/api/v1/version", tags=['Version'])
+@app.get("/api/v1/version", response_model=List[VersionResponse], tags=['Version'])
 def get_version():
     return {"version": app.version}
