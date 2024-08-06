@@ -14,9 +14,10 @@ from .exchanges import Exchanges as Exchanges
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from contextlib import asynccontextmanager
+from trading_calendar import __version__
 
 def version():
-    return "0.0.22"
+    return __version__
 
 print("Trading Calendar version: {}".format(version()))
 
