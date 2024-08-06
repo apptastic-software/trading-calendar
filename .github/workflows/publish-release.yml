@@ -33,7 +33,7 @@ jobs:
         with:
           operation: 'write'
           file-path: 'trading_calendar/__init__.py'
-          key-value-pairs: '{"__version__": "${{ env.new_version }}"}'
+          key-value-pairs: '{"__version__": "\"${{ env.new_version }}\""}'
 
       - name: Commit version update 🔀
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -68,6 +68,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
 
       - name: Generate OpenAPI specification 📝
         uses: column-st/fastapi-openapi-specs-action@v1.0.2

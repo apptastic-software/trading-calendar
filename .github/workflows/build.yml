@@ -29,26 +29,6 @@ jobs:
         run: |
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
-      - name: Bump version 🖊️
-        uses: kurt-code/gha-properties@v0.0.1
-        id: read-properties
-        with:
-          operation: 'write'
-          file-path: 'trading_calendar/__init__.py'
-          key-value-pairs: '{"__version__": "\"${{ steps.version.outputs.next-version }}\""}'
-
-      - name: Commit version update 🔀
-        uses: stefanzweifel/git-auto-commit-action@v5
-        id: auto-commit-action-bump-version
-        with:
-            commit_message: Bump version to ${{ steps.version.outputs.next-version }}
-            file_pattern: trading_calendar/__init__.py
-            branch: main
-  
-      - name: "Version - changes have been detected 🔍"
-        if: steps.auto-commit-action-bump-version.outputs.changes_detected == 'true'
-        run: echo "Updated trading_calendar/__init__.py with version ${{ steps.version.outputs.next-version }} ✅"
-
       - name: Setup Python ⚙️
         uses: actions/setup-python@v5
         with:
