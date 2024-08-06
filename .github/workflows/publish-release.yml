@@ -27,7 +27,7 @@ jobs:
           echo "New version: ${NEW_VERSION}"
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
 
-      - name: Read/Write Properties File
+      - name: Bump version 🖊️
         uses: kurt-code/gha-properties@v0.0.1
         id: read-properties
         with:
@@ -35,17 +35,17 @@ jobs:
           file-path: 'trading_calendar/__init__.py'
           key-value-pairs: '{"__version__": "${{ env.new_version }}"}'
 
-      - name: Commit README.md
+      - name: Commit version update 🔀
         uses: stefanzweifel/git-auto-commit-action@v5
-        id: auto-commit-action-readme
+        id: auto-commit-action-bump-version
         with:
-            commit_message: Update version to ${{ env.new_version }}
-            file_pattern: README.md
-            branch: master
+            commit_message: Bump version to ${{ env.new_version }}
+            file_pattern: trading_calendar/__init__.py
+            branch: main
   
-      - name: "README.md - changes have been detected 🔍"
-        if: steps.auto-commit-action-readme.outputs.changes_detected == 'true'
-        run: echo "Updated README.md with release version ${{ env.new_version }} ✅"
+      - name: "Version - changes have been detected 🔍"
+        if: steps.auto-commit-action-bump-version.outputs.changes_detected == 'true'
+        run: echo "Updated trading_calendar/__init__.py with release version ${{ env.new_version }} ✅"
 
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
@@ -92,7 +92,7 @@ jobs:
           branch: gh-pages
           folder: docs/api-doc
           target-folder: api-doc/latest
-          commit-message: Publishing latest API doc
+          commit-message: Publishing ${{ env.new_version }} API doc
           clean: true
           dry-run: false
 
@@ -128,13 +128,13 @@ jobs:
           echo "New version: ${NEW_VERSION}"
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
 
-      - name: Set up QEMU
+      - name: Set up QEMU ⚙️
         uses: docker/setup-qemu-action@v3
 
-      - name: Set up Docker Buildx
+      - name: Set up Docker Buildx ⚙️
         uses: docker/setup-buildx-action@v3
 
-      - name: Login to Docker Hub
+      - name: Login to Docker Hub 🔐
         uses: docker/login-action@v3
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
