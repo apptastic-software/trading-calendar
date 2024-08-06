@@ -13,6 +13,8 @@ jobs:
       next-version: ${{ steps.version.outputs.next-version }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Get version number 🔢
         id: get-version
@@ -60,6 +62,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate OpenAPI specification 📝
         uses: column-st/fastapi-openapi-specs-action@v1.0.2
