@@ -45,7 +45,7 @@ jobs:
   
       - name: "Version - changes have been detected 🔍"
         if: steps.auto-commit-action-bump-version.outputs.changes_detected == 'true'
-        run: echo "Updated trading_calendar/__init__.py with release version ${{ env.new_version }} ✅"
+        run: echo "Updated trading_calendar/__init__.py with version ${{ env.new_version }} ✅"
 
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
