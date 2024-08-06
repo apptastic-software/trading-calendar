@@ -580,6 +580,6 @@ def get_market_holidays(request: Request,
     return response
 
 
-@app.get("/api/v1/version", response_model=List[VersionResponse], tags=['Version'])
+@app.get("/api/v1/version", response_model=VersionResponse, tags=['Version'])
 def get_version():
     return {"version": app.version}
