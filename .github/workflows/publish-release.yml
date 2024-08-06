@@ -65,10 +65,8 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: main
+      - name: Checkout repository ⚙️
+        uses: actions/checkout@v4
 
       - name: Version number 🔢
         run: |
@@ -125,9 +123,6 @@ jobs:
     steps:
       - name: Checkout repository ⚙️
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: main
 
       - name: Version number 🔢
         run: |
