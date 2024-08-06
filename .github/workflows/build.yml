@@ -81,6 +81,6 @@ jobs:
           branch: gh-pages
           folder: docs/api-doc
           target-folder: api-doc/snapshot
-          commit-message: Publishing API doc
+          commit-message: Publishing ${{ needs.build.outputs.next-version }} API doc
           clean: true
           dry-run: false
