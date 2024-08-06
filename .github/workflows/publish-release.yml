@@ -67,7 +67,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.build.outputs.commit_hash }}
+          fetch-depth: 0
+          ref: main
+
+      - name: Version number 🔢
+        run: |
+          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
+          echo "New version: ${NEW_VERSION}"
+          echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
+  
+      - name: Version in __init__.py 🔢
+        run: |
+          cat trading_calendar/__init__.py
+          echo "__version__=\"${{ env.new_version }}\"" > trading_calendar/__init__.py
+          cat trading_calendar/__init__.py
 
       - name: Generate OpenAPI specification 📝
         uses: column-st/fastapi-openapi-specs-action@v1.0.2
@@ -79,12 +92,6 @@ jobs:
         uses: seeebiii/redoc-cli-github-action@v10
         with:
           args: 'bundle openapi.json -o docs/api-doc/index.html'
-
-      - name: Version number 🔢
-        run: |
-          NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
-          echo "New version: ${NEW_VERSION}"
-          echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
 
       - name: Deploy latest API doc 📚
         uses: JamesIves/github-pages-deploy-action@v4
@@ -119,13 +126,20 @@ jobs:
       - name: Checkout repository ⚙️
         uses: actions/checkout@v4
         with:
-          ref: ${{ needs.build.outputs.commit_hash }}
+          fetch-depth: 0
+          ref: main
 
       - name: Version number 🔢
         run: |
           NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3 | cut -c2-)
           echo "New version: ${NEW_VERSION}"
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
+
+      - name: Version in __init__.py 🔢
+        run: |
+          cat trading_calendar/__init__.py
+          echo "__version__=\"${{ env.new_version }}\"" > trading_calendar/__init__.py
+          cat trading_calendar/__init__.py
 
       - name: Set up QEMU ⚙️
         uses: docker/setup-qemu-action@v3
