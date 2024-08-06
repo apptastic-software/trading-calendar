@@ -35,7 +35,7 @@ jobs:
         with:
           operation: 'write'
           file-path: 'trading_calendar/__init__.py'
-          key-value-pairs: '{"__version__": "${{ steps.version.outputs.next-version }}"}'
+          key-value-pairs: '{"__version__": "\"${{ steps.version.outputs.next-version }}\""}'
 
       - name: Commit version update 🔀
         uses: stefanzweifel/git-auto-commit-action@v5
