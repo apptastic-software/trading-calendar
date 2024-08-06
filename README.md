@@ -2,8 +2,9 @@ Trading Calendar
 ================
 [![Build](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml/badge.svg)](https://github.com/apptastic-software/trading-calendar/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/apptastic-software/trading-calendar/graph/badge.svg?token=75QZNYMEOI)](https://codecov.io/github/apptastic-software/trading-calendar)
-[![Docker Image Version](https://img.shields.io/docker/v/apptasticsoftware/trading-calendar/0.0.22?logo=Docker&logoColor=ffffff&color=orange)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
-[![API Doc](https://img.shields.io/badge/api%20doc-0.0.22-blue.svg)](https://apptastic-software.github.io/trading-calendar/api-doc/0.1.0-SNAPSHOT)
+[![Docker Image Version](https://img.shields.io/docker/v/apptasticsoftware/trading-calendar?logo=Docker&logoColor=ffffff)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
+[![API Doc](https://img.shields.io/github/v/release/apptastic-software/trading-calendar?display_name=release&label=api%20doc)](https://apptastic-software.github.io/trading-calendar/api-doc/latest)
+
 [![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)
 
 Free trading calendar REST API with holiday, late open, and early close. Over [50 unique exchange calendars](#calendars) for global equity and futures markets.
