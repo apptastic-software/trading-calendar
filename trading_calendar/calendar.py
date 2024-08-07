@@ -24,7 +24,6 @@ class Calendar:
                 self.regular_holidays = calendar.regular_holidays.holidays(return_name=True)
             except Exception as e:
                 print("Exception in regular_holidays for {}. Message: {}".format(calendar.name, e))
-                pass
 
         for adhoc_holiday in calendar.adhoc_holidays:
             try:
@@ -36,7 +35,6 @@ class Calendar:
                     self.adhoc_holidays.add(str(adhoc_holiday.date()))
             except Exception as e:
                 print("Exception in adhoc_holidays for {}. Message: {}".format(calendar.name, e))
-                pass
 
         if hasattr(self.calendar, 'precomputed_holidays'):
             try:
@@ -48,7 +46,6 @@ class Calendar:
                         self.precomputed_holidays.add(str(precomputed_holiday.date()))
             except Exception as e:
                 print("Exception in precomputed_holidays for {}. Message: {}".format(calendar.name, e))
-                pass
 
         for special_close in calendar.special_closes: 
             try:
@@ -60,7 +57,6 @@ class Calendar:
                     self.early_close.append((close_time, holiday))
             except Exception as e:
                 print("Exception in special_closes for {}. Message: {}".format(calendar.name, e))
-                pass
 
         for special_closes_adhoc in calendar.special_closes_adhoc: 
             try:
@@ -76,7 +72,6 @@ class Calendar:
                 self.special_closes_adhoc.append((close_time, close_dates))
             except Exception as e:
                 print("Exception in special_closes_adhoc for {}. Message: {}".format(calendar.name, e))
-                pass
 
         for special_opens in calendar.special_opens: 
             try:
@@ -85,7 +80,6 @@ class Calendar:
                 self.special_opens.append((open_time, holiday))
             except Exception as e:
                 print("Exception in special_opens for {}. Message: {}".format(calendar.name, e))
-                pass
 
         for special_opens_adhoc in calendar.special_opens_adhoc:
             try:
@@ -101,7 +95,6 @@ class Calendar:
                 self.special_opens_adhoc.append((open_time, open_dates))
             except Exception as e:
                 print("Exception in special_opens_adhoc for {}. Message: {}".format(calendar.name, e))
-                pass
 
         self.weekdays = []
         if self.calendar.weekmask[6] == '1':
@@ -164,7 +157,7 @@ class Calendar:
                     return (value[1], None, None)
                 else:
                     return (value, None, None)
-            except Exception as e:
+            except Exception as _:
                 pass
 
         if date_str in self.adhoc_holidays:
@@ -186,7 +179,7 @@ class Calendar:
                 (close_time, holidays) = early_close
                 holiday_name = holidays[date_str]
                 early_close_time = close_time
-            except:
+            except Exception as _:
                 pass
 
         if not early_close_time:
@@ -201,7 +194,7 @@ class Calendar:
                 (open_time, holidays) = special_opens
                 holiday_name = holidays[date_str] if not holiday_name else holiday_name
                 special_open_time = open_time
-            except:
+            except Exception as _:
                 pass
 
         if not special_open_time:
@@ -237,7 +230,7 @@ class Calendar:
                 name = subdivisions_holiday.get(date_str)
                 if name is not None:
                     return name
-        except:
+        except Exception as _:
             pass
 
         return None

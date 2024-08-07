@@ -3,7 +3,7 @@ import re
 def test_api_version(client):
     response = client.get("/api/v1/version")
     assert response.status_code == 200
-    assert re.search('^[0-9]+\\.[0-9]+\\.[0-9]+$', response.json()['version'])
+    assert re.search('^\\d+\\.\\d+\\.\\d+$', response.json()['version'])
 
 
 def test_markets_all(client):

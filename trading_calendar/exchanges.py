@@ -7,7 +7,6 @@ class Exchanges:
         print("Exchange Calendars version: {}".format(ecals.__version__))
         self.exchanges = {}
         self.mic_list = []
-        pass
 
 
     def load(self):

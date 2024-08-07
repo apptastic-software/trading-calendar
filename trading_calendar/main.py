@@ -201,13 +201,13 @@ def next_dst_transition(dt, zone):
 
 
 def get_dst_transitions(dt, zone):
-    next = next_dst_transition(dt, zone)
-    if (next):
+    next_dst = next_dst_transition(dt, zone)
+    if (next_dst):
         previous = previous_dst_transition(dt, zone)
     else:
         print(zone)
         previous = None
-    return next, previous 
+    return next_dst, previous 
 
 
 def is_dst(dt, zone):
@@ -302,8 +302,8 @@ def fetch_status(mic_list):
             local_time = datetime.now().astimezone(tz).replace(microsecond=0)
 
             (holiday_name, special_open_time, early_close_time) = calendar.get_holiday_name(local_time.date())            
-            is_special_open = not special_open_time == None
-            is_early_close = not early_close_time == None
+            is_special_open = special_open_time != None
+            is_early_close = early_close_time != None
 
             open_time = special_open_time if (is_special_open) else calendar.get_open_time(local_time.date())
             open_time = datetime.combine(local_time.date(), open_time, tz)
@@ -336,7 +336,6 @@ def fetch_status(mic_list):
 
         except Exception as e:
             print("Exception in fetch_status for {}. Message: {}".format(mic, e))
-            pass
     
     return status_list  
 
@@ -356,8 +355,8 @@ def fetch_trading_hours(mic_list, start_date, end_date):
                     continue
 
                 (holiday_name, special_open_time, early_close_time) = calendar.get_holiday_name(d)
-                is_special_open = not special_open_time == None
-                is_early_close = not early_close_time == None
+                is_special_open = special_open_time != None
+                is_early_close = early_close_time != None
                 is_business_day = is_special_open or is_early_close or holiday_name == None
                 if not is_business_day:
                     continue
@@ -384,7 +383,6 @@ def fetch_trading_hours(mic_list, start_date, end_date):
 
             except Exception as e:
                 print("Exception in fetch_trading_hours for {}, date {}. Message: {}".format(mic, date_str, e))
-                pass
     
     return trading_hours_list
 
@@ -403,8 +401,8 @@ def fetch_market_holidays(mic_list, start_date, end_date):
                 if holiday_name == None:
                     continue
 
-                is_special_open = not special_open_time == None
-                is_early_close = not early_close_time == None
+                is_special_open = special_open_time != None
+                is_early_close = early_close_time != None
                 is_business_day = is_special_open or is_early_close
 
                 holiday = {
@@ -434,7 +432,6 @@ def fetch_market_holidays(mic_list, start_date, end_date):
 
             except Exception as e:
                 print("Exception in fetch_market_holidays for {}, date {}. Message: {}".format(mic, date_str, e))
-                pass
     
     return holiday_list
 
