@@ -27,7 +27,7 @@ jobs:
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
 
       - name: Bump version 🖊️
-        uses: kurt-code/gha-properties@v0.0.1
+        uses: kurt-code/gha-properties@v0.0.2
         id: read-properties
         with:
           operation: 'write'
