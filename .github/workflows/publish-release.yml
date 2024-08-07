@@ -1,4 +1,4 @@
-# This workflow will publish the release to Maven Central Repository
+# This workflow will publish the release to Docker Hub
 
 name: Publish Release
 
