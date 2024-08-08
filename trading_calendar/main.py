@@ -117,7 +117,7 @@ class MarketResponse(BaseModel):
     lei: str = Field(examples=["5493000F4ZO33MV32P92"])
     url: str = Field(examples=["https://www.nyse.com/index"])
     city: str = Field(examples=["New York"])
-    country: str = Field(examples=["New York"])
+    country: str = Field(examples=["United States"])
     country_code: str = Field(examples=["US"])
     flag: str = Field(examples=["🇺🇸"])
     currency_code: str = Field(examples=["USD"])
