@@ -12,9 +12,8 @@ jobs:
     outputs:
       next-version: ${{ steps.version.outputs.next-version }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout repository ⚙️
+        uses: actions/checkout@v4
 
       - name: Get version number 🔢
         id: get-version
@@ -47,7 +46,7 @@ jobs:
 
       - name: Build and test 🏗️
         run: |
-          pip install httpx pytest pytest-cov coverage codecov
+          pip install httpx pytest pytest-cov coverage
           pytest -v --doctest-modules --junitxml=junit/test-results.xml --cov=trading_calendar --cov-report=xml --cov-report=html
 
       - name: Upload coverage reports
@@ -61,9 +60,8 @@ jobs:
     if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.event_name != 'schedule' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout repository ⚙️
+        uses: actions/checkout@v4
 
       - name: Generate OpenAPI specification 📝
         uses: column-st/fastapi-openapi-specs-action@v1.0.2
