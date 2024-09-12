@@ -5,4 +5,4 @@ uvicorn==0.30.5
 slowapi==0.1.9
 email-validator==2.2.0
 exchange_calendars==4.5.5
-holidays==0.55
+holidays==0.56
