@@ -10,7 +10,7 @@ services:
       - .:/code
 
   requirements:
-    image: python:3.12.4-slim-bookworm
+    image: python:3.12.7-slim-bookworm
     volumes:
       - .:/code
     working_dir: /code

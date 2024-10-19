@@ -1,8 +1,8 @@
-tzdata==2024.1
-fastapi==0.114.1
+tzdata==2024.2
+fastapi==0.115.2
 pydantic==2.9.2
-uvicorn==0.30.6
+uvicorn==0.32.0
 slowapi==0.1.9
 email-validator==2.2.0
-exchange_calendars==4.5.6
-holidays==0.56
+exchange_calendars==4.5.7
+holidays==0.58
