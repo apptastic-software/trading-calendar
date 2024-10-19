@@ -1,4 +1,4 @@
-tzdata==2024.1
+tzdata==2024.2
 fastapi==0.115.2
 pydantic==2.9.1
 uvicorn==0.32.0
