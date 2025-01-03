@@ -21,6 +21,8 @@ categories:
     label: 'chore'
   - title: '♻️ Refactoring'
     label: 'refactor'
+  - title: '📅 Trading Calendar Update'
+    label: 'calendar update'
   - title: '🧪 Tests'
     label: 'test'
   - title: '🎨️ Style'
