@@ -4,7 +4,7 @@ Trading Calendar
 [![codecov](https://codecov.io/github/apptastic-software/trading-calendar/graph/badge.svg?token=75QZNYMEOI)](https://codecov.io/github/apptastic-software/trading-calendar)
 [![Docker Image Version](https://img.shields.io/docker/v/apptasticsoftware/trading-calendar?logo=Docker&logoColor=ffffff)](https://hub.docker.com/r/apptasticsoftware/trading-calendar/tags)
 [![API Doc](https://img.shields.io/github/v/release/apptastic-software/trading-calendar?display_name=release&label=api%20doc)](https://apptastic-software.github.io/trading-calendar/api-doc/latest)
-[![License](http://img.shields.io/:license-MIT-blue.svg?style=flat-round)](http://apptastic-software.mit-license.org)
+[![License](https://img.shields.io/:license-MIT-blue.svg?style=flat-round)](https://apptastic-software.mit-license.org)
 
 Free trading calendar REST API with holiday, late open, and early close. Over [50 unique exchange calendars](#calendars) for global equity and futures markets.
 
@@ -69,6 +69,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | London Stock Exchange           | XLON     | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England        | https://www.londonstockexchange.com/home/homepage.htm         |
 | Euronext Amsterdam              | XAMS     | 🇳🇱 Netherlands    | https://www.euronext.com/en/regulation/amsterdam              |
 | Euronext Brussels               | XBRU     | 🇧🇪 Belgium        | https://www.euronext.com/en/regulation/brussels               |
+| Luxembourg Stock Exchange       | XLUX     | 🇱🇺 Luxembourg     | https://www.luxse.com                                         |
 | Euronext Lisbon                 | XLIS     | 🇵🇹 Portugal       | https://www.euronext.com/en/regulation/lisbon                 |
 | Euronext Paris                  | XPAR     | 🇫🇷 France         | https://www.euronext.com/en/regulation/paris                  |
 | Frankfurt Stock Exchange        | XFRA     | 🇩🇪 Germany        | https://en.boerse-frankfurt.de                                |
