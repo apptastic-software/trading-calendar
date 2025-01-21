@@ -1,3 +1,4 @@
 # Add 'calendar update' label to any PR where the head branch name starts with `dependabot/pip/exchange-calendars-`
 'calendar update':
-  - head-branch: 'dependabot'
+- any:
+  - head-branch: ['dependabot']
