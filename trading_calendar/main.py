@@ -256,6 +256,7 @@ def fetch_markets(mic_list):
             'country': exchange.get_country(),
             'country_code': exchange.get_country_code(),
             'flag': exchange.get_flag(),
+            'currency_name': exchange.get_currency_name(),
             'currency_code': exchange.get_currency_code(),
             'currency_symbol': exchange.get_currency_symbol(),
             'region': exchange.get_region(),
