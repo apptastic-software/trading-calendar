@@ -120,6 +120,7 @@ class MarketResponse(BaseModel):
     country: str = Field(examples=["United States"])
     country_code: str = Field(examples=["US"])
     flag: str = Field(examples=["🇺🇸"])
+    currency_name: str = Field(examples=["US dollar"])
     currency_code: str = Field(examples=["USD"])
     currency_symbol: str = Field(examples=["$"])
     region: str = Field(examples=["North America"])
