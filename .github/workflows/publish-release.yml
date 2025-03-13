@@ -177,12 +177,12 @@ jobs:
         with:
           subject-name: index.docker.io/apptasticsoftware/trading-calendar
           subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true
+          push-to-registry: false
 
       - name: Attest build provenance for GHCR 🔏
         id: attest-ghcr
         uses: actions/attest-build-provenance@v2
         with:
-          subject-name: ghcr.io/apptasticsoftware/trading-calendar
+          subject-name: ghcr.io/apptastic-software/trading-calendar
           subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true
+          push-to-registry: false
