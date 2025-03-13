@@ -18,22 +18,32 @@ Data includes:
 
 ## Running it locally
 
-### Pull the Docker Image
+### Pull image
 
-Pull pre-built image from [Docker Hub repository][1]:
+Pull image from [Docker Hub repository][1]:
 ```
 docker pull apptasticsoftware/trading-calendar:latest
 ```
+Or pull image from [GitHub Container Registry (GHCR)][2]:
+```
+docker pull ghcr.io/apptastic-software/trading-calendar:latest
+```
 
-### Start the Docker Container
-Run a container based on the image:
+### Start the container
+Run a container based on the image from Docker Hub:
 ```
 docker run -d --name trading-calendar -p 8000:80 apptasticsoftware/trading-calendar
 ```
+
+Run a container based on the image from GHCR:
+```
+docker run -d --name trading-calendar -p 8000:80 ghcr.io/apptastic-software/trading-calendar
+```
+
 It will take around one minute for the container to start and accept requests.
 
 ### Test it
-Test that the docker container is working:
+Test that the container is working:
 ```
  http://127.0.0.1:8000/api/v1/markets?mic=XNYS
 ```
@@ -146,3 +156,4 @@ License
     SOFTWARE.
 
 [1]: https://hub.docker.com/r/apptasticsoftware/trading-calendar
+[2]: https://github.com/apptastic-software/trading-calendar/pkgs/container/trading-calendar
