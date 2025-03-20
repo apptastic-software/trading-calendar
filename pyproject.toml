@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trading_calendar"
+version = "0.1.0"
+description = "Trading calendar project."
+authors = [
+    { name = "Apptastic Software", email = "apptastic.software@gmail.com" }
+]
+requires-python = "~=3.12"
+dependencies = [
+    "tzdata",
+    "fastapi",
+    "pydantic",
+    "uvicorn",
+    "slowapi",
+    "email-validator",
+    "exchange_calendars",
+    "holidays",
+]
+dynamic = ["version"]
