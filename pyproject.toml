@@ -11,13 +11,13 @@ authors = [
 ]
 requires-python = "~=3.12"
 dependencies = [
-    "tzdata"
-    "fastapi"
-    "pydantic"
-    "uvicorn"
-    "slowapi"
-    "email-validator"
-    "exchange_calendars"
-    "holidays"
+    "tzdata",
+    "fastapi",
+    "pydantic",
+    "uvicorn",
+    "slowapi",
+    "email-validator",
+    "exchange_calendars",
+    "holidays",
 ]
 dynamic = ["version"]
