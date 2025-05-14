@@ -170,6 +170,15 @@ jobs:
             apptasticsoftware/trading-calendar:${{ env.new_version }}
             ghcr.io/apptastic-software/trading-calendar:latest
             ghcr.io/apptastic-software/trading-calendar:${{ env.new_version }}
+          annotations: |
+            org.opencontainers.image.title=Trading Calendar
+            org.opencontainers.image.description=REST API service for retrieving trading hours, market holidays and trading schedules for financial exchanges worldwide
+            org.opencontainers.image.version=${{ env.new_version }}
+            org.opencontainers.image.url=https://github.com/apptastic-software/trading-calendar
+            org.opencontainers.image.source=https://github.com/apptastic-software/trading-calendar
+            org.opencontainers.image.licenses=MIT
+            org.opencontainers.image.vendor=Apptastic Software
+            org.opencontainers.image.authors=Apptastic Software
 
       - name: Attest build provenance for Docker Hub 🔏
         id: attest-docker-hub
