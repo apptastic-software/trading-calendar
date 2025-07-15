@@ -35,7 +35,7 @@ jobs:
           key-value-pairs: '{"__version__": "\"${{ env.new_version }}\""}'
 
       - name: Commit version update 🔀
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         id: auto-commit-action-bump-version
         with:
             commit_message: Bump version to ${{ env.new_version }}
