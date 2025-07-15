@@ -94,7 +94,6 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | Borsa Italiana                  | XMIL     | 🇮🇹 Italy          | https://www.borsaitaliana.it/homepage/homepage.en.htm         |
 | New Zealand Exchange            | XNZE     | 🇳🇿 New Zealand    | https://www.nzx.com                                           |
 | Wiener Borse                    | XWBO     | 🇦🇹 Austria        | https://www.wienerborse.at/en                                 |
-| Hong Kong Stock Exchange        | XHKG     | 🇭🇰 Hong Kong      | https://www.hkex.com.hk/?sc_lang=en                           |
 | Copenhagen Stock Exchange       | XCSE     | 🇩🇰 Denmark        | https://www.nasdaqomxnordic.com                               |
 | Helsinki Stock Exchange         | XHEL     | 🇫🇮 Finland        | https://www.nasdaqomxnordic.com                               |
 | Stockholm Stock Exchange        | XSTO     | 🇸🇪 Sweden         | https://www.nasdaqomxnordic.com                               |
@@ -103,31 +102,33 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | Bombay Stock Exchange           | XBOM     | 🇮🇳 India          | https://www.bseindia.com                                      |
 | Singapore Exchange              | XSES     | 🇸🇬 Singapore      | https://www.sgx.com                                           |
 | Shanghai Stock Exchange         | XSHG     | 🇨🇳 China          | https://english.sse.com.cn                                    |
+| Hong Kong Stock Exchange        | XHKG     | 🇭🇰 Hong Kong      | https://www.hkex.com.hk/?sc_lang=en                           |
+| Taiwan Stock Exchange Corp.     | XTAI     | 🇹🇼 Taiwan         | https://www.twse.com.tw/en                                    |
 | Korea Exchange                  | XKRX     | 🇰🇷 South Korea    | https://global.krx.co.kr                                      |
+| Malaysia Stock Exchange         | XKLS     | 🇲🇾 Malaysia       | https://www.bursamalaysia.com                                 |
+| Philippine Stock Exchange       | XPHS     | 🇵🇭 Philippines    | https://www.pse.com.ph/stockMarket/home.html                  |
+| Stock Exchange of Thailand      | XBKK     | 🇹🇭 Thailand       | https://www.set.or.th/set/mainpage.do?language=en&country=US  |
+| Indonesia Stock Exchange        | XIDX     | 🇮🇩 Indonesia      | https://www.idx.co.id                                         |
 | Iceland Stock Exchange          | XICE     | 🇮🇸 Iceland        | https://www.nasdaqomxnordic.com                               |
 | Tallinn Stock Exchange          | XTAL     | 🇪🇪 Estonia        | https://nasdaqbaltic.com                                      |
+| Riga Stock Exchange             | XRIS     | 🇱🇻 Latvia         | https://nasdaqbaltic.com                                      |
 | Poland Stock Exchange           | XWAR     | 🇵🇱 Poland         | https://www.gpw.pl                                            |
 | Prague Stock Exchange           | XPRA     | 🇨🇿 Czech Republic | https://www.pse.cz/en                                         |
+| Bucharest Stock Exchange        | XBSE     | 🇷🇴 Romania        | https://www.bvb.ro                                            |
 | Budapest Stock Exchange         | XBUD     | 🇭🇺 Hungary        | https://bse.hu                                                |
+| Moscow Exchange                 | XMOS     | 🇷🇺 Russia         | https://www.moex.com/en                                       |
+| Astana International Exchange   | AIXK     | 🇰🇿 Kazakhstan     | https://www.aix.kz                                            |
+| Athens Stock Exchange           | ASEX     | 🇬🇷 Greece         | https://www.athexgroup.gr                                     |
+| Istanbul Stock Exchange         | XIST     | 🇹🇷 Turkey         | https://www.borsaistanbul.com/en                              |
+| Tel Aviv Stock Exchange         | XTAE     | 🇮🇱 Israel         | https://www.tase.co.il/Eng/Pages/Homepage.aspx                |
 | Santiago Stock Exchange         | XSGO     | 🇨🇱 Chile          | https://inter.bolsadesantiago.com/sitios/en/Paginas/home.aspx |
 | Colombia Securities Exchange    | XBOG     | 🇨🇴 Colombia       | https://www.bvc.com.co/nueva/index_en.html                    |
 | Mexican Stock Exchange          | XMEX     | 🇲🇽 Mexico         | https://www.bmv.com.mx                                        |
 | Lima Stock Exchange             | XLIM     | 🇵🇪 Peru           | https://www.bvl.com.pe                                        |
-| Athens Stock Exchange           | ASEX     | 🇬🇷 Greece         | https://www.athexgroup.gr                                     |
-| Istanbul Stock Exchange         | XIST     | 🇹🇷 Turkey         | https://www.borsaistanbul.com/en                              |
-| Tel Aviv Stock Exchange         | XTAE     | 🇮🇱 Israel         | https://www.tase.co.il/Eng/Pages/Homepage.aspx                |
-| Johannesburg Stock Exchange     | XJSE     | 🇿🇦 South Africa   | https://www.jse.co.za/z                                       |
-| Malaysia Stock Exchange         | XKLS     | 🇲🇾 Malaysia       | https://www.bursamalaysia.com                                 |
-| Moscow Exchange                 | XMOS     | 🇷🇺 Russia         | https://www.moex.com/en                                       |
-| Philippine Stock Exchange       | XPHS     | 🇵🇭 Philippines    | https://www.pse.com.ph/stockMarket/home.html                  |
-| Stock Exchange of Thailand      | XBKK     | 🇹🇭 Thailand       | https://www.set.or.th/set/mainpage.do?language=en&country=US  |
-| Indonesia Stock Exchange        | XIDX     | 🇮🇩 Indonesia      | https://www.idx.co.id                                         |
-| Taiwan Stock Exchange Corp.     | XTAI     | 🇹🇼 Taiwan         | https://www.twse.com.tw/en                                    |
 | Buenos Aires Stock Exchange     | XBUE     | 🇦🇷 Argentina      | https://www.bcba.sba.com.ar                                   |
+| Johannesburg Stock Exchange     | XJSE     | 🇿🇦 South Africa   | https://www.jse.co.za/z                                       |
 | Pakistan Stock Exchange         | XKAR     | 🇵🇰 Pakistan       | https://www.psx.com.pk                                        |
 | Saudi Stock Exchange            | XSAU     | 🇸🇦 Saudi Arabia   | https://www.saudiexchange.sa                                  |
-| Astana International Exchange   | AIXK     | 🇰🇿 Kazakhstan     | https://www.aix.kz                                            |
-| Bucharest Stock Exchange        | XBSE     | 🇷🇴 Romania        | https://www.bvb.ro                                            |
 
 > Note that exchange calendars are defined by their [ISO-10383](https://www.iso20022.org/10383/iso-10383-market-identifier-codes) market identifier code (MIC).
 
