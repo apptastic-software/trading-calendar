@@ -105,13 +105,14 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | Shanghai Stock Exchange         | XSHG     | 🇨🇳 China          | https://english.sse.com.cn                                    |
 | Korea Exchange                  | XKRX     | 🇰🇷 South Korea    | https://global.krx.co.kr                                      |
 | Iceland Stock Exchange          | XICE     | 🇮🇸 Iceland        | https://www.nasdaqomxnordic.com                               |
+| Tallinn Stock Exchange          | XTAL     | 🇪🇪 Estonia        | https://nasdaqbaltic.com                                      |
 | Poland Stock Exchange           | XWAR     | 🇵🇱 Poland         | https://www.gpw.pl                                            |
+| Prague Stock Exchange           | XPRA     | 🇨🇿 Czech Republic | https://www.pse.cz/en                                         |
+| Budapest Stock Exchange         | XBUD     | 🇭🇺 Hungary        | https://bse.hu                                                |
 | Santiago Stock Exchange         | XSGO     | 🇨🇱 Chile          | https://inter.bolsadesantiago.com/sitios/en/Paginas/home.aspx |
 | Colombia Securities Exchange    | XBOG     | 🇨🇴 Colombia       | https://www.bvc.com.co/nueva/index_en.html                    |
 | Mexican Stock Exchange          | XMEX     | 🇲🇽 Mexico         | https://www.bmv.com.mx                                        |
 | Lima Stock Exchange             | XLIM     | 🇵🇪 Peru           | https://www.bvl.com.pe                                        |
-| Prague Stock Exchange           | XPRA     | 🇨🇿 Czech Republic | https://www.pse.cz/en                                         |
-| Budapest Stock Exchange         | XBUD     | 🇭🇺 Hungary        | https://bse.hu                                                |
 | Athens Stock Exchange           | ASEX     | 🇬🇷 Greece         | https://www.athexgroup.gr                                     |
 | Istanbul Stock Exchange         | XIST     | 🇹🇷 Turkey         | https://www.borsaistanbul.com/en                              |
 | Tel Aviv Stock Exchange         | XTAE     | 🇮🇱 Israel         | https://www.tase.co.il/Eng/Pages/Homepage.aspx                |
