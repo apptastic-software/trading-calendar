@@ -119,6 +119,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | Moscow Exchange                 | XMOS     | 🇷🇺 Russia         | https://www.moex.com/en                                       |
 | Astana International Exchange   | AIXK     | 🇰🇿 Kazakhstan     | https://www.aix.kz                                            |
 | Athens Stock Exchange           | ASEX     | 🇬🇷 Greece         | https://www.athexgroup.gr                                     |
+| Cyprus Stock Exchange           | XCYS     | 🇨🇾 Cyprus         | https://www.cse.com.cy/en-GB/home                             |
 | Istanbul Stock Exchange         | XIST     | 🇹🇷 Turkey         | https://www.borsaistanbul.com/en                              |
 | Tel Aviv Stock Exchange         | XTAE     | 🇮🇱 Israel         | https://www.tase.co.il/Eng/Pages/Homepage.aspx                |
 | B3 S.A. - Brasil Bolsa Balcao   | BVMF     | 🇧🇷 Brazil         | https://www.b3.com.br/en_us                                   |
