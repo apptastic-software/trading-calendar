@@ -98,6 +98,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | Irish Stock Exchange            | XDUB     | 🇮🇪 Ireland        | https://www.euronext.com/en/markets/dublin                    |
 | Bombay Stock Exchange           | XBOM     | 🇮🇳 India          | https://www.bseindia.com                                      |
 | Austrialian Securities Exchange | XASX     | 🇦🇺 Australia      | https://www.asx.com.au                                        |
+| Bermuda Stock Exchange          | XBDA     | 🇧🇲 Bermuda        | https://www.bsx.com                                           |
 | Singapore Exchange              | XSES     | 🇸🇬 Singapore      | https://www.sgx.com                                           |
 | Shanghai Stock Exchange         | XSHG     | 🇨🇳 China          | https://english.sse.com.cn                                    |
 | Hong Kong Stock Exchange        | XHKG     | 🇭🇰 Hong Kong      | https://www.hkex.com.hk/?sc_lang=en                           |

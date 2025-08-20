@@ -984,7 +984,23 @@ class Exchanges:
                 'currency_code' : '$',
                 'currency_symbol' : 'NZD',
                 'dst_transitions' : 'true',
-            }
+            },
+            'XBDA' : {
+                'mic' : 'XBDA',
+                'name' : 'Bermuda Stock Exchange',
+                'acronym' : 'BSX',
+                'lei' : None,
+                'url' : 'https://www.bsx.com',
+                'city' : 'Hamilton',
+                'country' : 'Bermuda',
+                'country_code' : 'BM',
+                'region' : 'North America',
+                'flag' : '🇧🇲',
+                'currency_name' : "Bermudian dollar",
+                'currency_code' : '$',
+                'currency_symbol' : 'BMD',
+                'dst_transitions' : 'true',
+            },
         }
 
         count = 0
