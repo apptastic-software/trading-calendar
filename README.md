@@ -116,6 +116,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | Poland Stock Exchange           | XWAR     | 🇵🇱 Poland         | https://www.gpw.pl                                            |
 | Prague Stock Exchange           | XPRA     | 🇨🇿 Czech Republic | https://www.pse.cz/en                                         |
 | Bucharest Stock Exchange        | XBSE     | 🇷🇴 Romania        | https://www.bvb.ro                                            |
+| Zagreb Stock Exchange           | XZAG     | 🇭🇷 Croatia        | https://www.zse.hr/en                                         |
 | Budapest Stock Exchange         | XBUD     | 🇭🇺 Hungary        | https://bse.hu                                                |
 | Moscow Exchange                 | XMOS     | 🇷🇺 Russia         | https://www.moex.com/en                                       |
 | Astana International Exchange   | AIXK     | 🇰🇿 Kazakhstan     | https://www.aix.kz                                            |
