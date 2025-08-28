@@ -13,11 +13,11 @@ jobs:
       next-version: ${{ steps.version.outputs.next-version }}
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Get version number 🔢
         id: get-version
-        uses: release-drafter/release-drafter@v6
+        uses: release-drafter/release-drafter@b1476f6e6eb133afa41ed8589daba6dc69b4d3f5 # v6.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -31,7 +31,7 @@ jobs:
           echo "Next version: ${{ steps.version.outputs.next-version }}"
 
       - name: Setup Python ⚙️
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: '3.12'
           cache: 'pip' # caching pip dependencies
@@ -50,7 +50,7 @@ jobs:
           pytest -v --doctest-modules --junitxml=junit/test-results.xml --cov=trading_calendar --cov-report=xml --cov-report=html
 
       - name: Upload coverage reports
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@fdcc8476540edceab3de004e990f80d881c6cc00 # v5.5.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
@@ -61,21 +61,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Generate OpenAPI specification 📝
-        uses: column-st/fastapi-openapi-specs-action@v1.0.2
+        uses: column-st/fastapi-openapi-specs-action@dcffa69c27f2b77a9d6a4e5ebb91d62c712650c9 # v1.0.2
         with:
           moduleDir: trading_calendar
           outputExtension: json
 
       - name: Generate API doc 📝
-        uses: seeebiii/redoc-cli-github-action@v10
+        uses: seeebiii/redoc-cli-github-action@5c63e650f5fee1f2d23fab55550301988ded678a # v10
         with:
           args: 'bundle openapi.json -o docs/api-doc/index.html'
 
       - name: Deploy API doc 📚
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8 # v4.7.3
         with:
           branch: gh-pages
           folder: docs/api-doc

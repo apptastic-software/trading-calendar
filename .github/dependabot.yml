@@ -14,12 +14,12 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
   
   - package-ecosystem: pip
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     open-pull-requests-limit: 10
     allow:
       # Allow both direct and indirect updates for all packages
@@ -29,4 +29,4 @@ updates:
   - package-ecosystem: docker
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
