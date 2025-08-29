@@ -70,7 +70,7 @@ jobs:
           outputExtension: json
 
       - name: Generate API doc 📝
-        uses: seeebiii/redoc-cli-github-action@5c63e650f5fee1f2d23fab55550301988ded678a # v10
+        uses: seeebiii/redoc-cli-github-action@c9649b33918da5eb290b81cd03a943caea091540 # v10
         with:
           args: 'bundle openapi.json -o docs/api-doc/index.html'
 
