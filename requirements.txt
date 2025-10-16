@@ -4,5 +4,5 @@ pydantic==2.11.7
 uvicorn==0.35.0
 slowapi==0.1.9
 email-validator==2.2.0
-exchange_calendars==4.11.1
+exchange_calendars==4.11.2
 holidays==0.79
