@@ -1,4 +1,4 @@
-FROM python:3.13.7-slim-bookworm
+FROM python:3.13.7-slim-trixie
 
 RUN apt-get update && apt-get install tzdata
 

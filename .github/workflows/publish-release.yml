@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0
 
@@ -27,7 +27,7 @@ jobs:
           echo "new_version=${NEW_VERSION}" >> $GITHUB_ENV
 
       - name: Bump version 🖊️
-        uses: kurt-code/gha-properties@v0.0.2
+        uses: kurt-code/gha-properties@a2a0b14f87e2389e7b65fced95cef9d7cea2fc20 # v0.0.2
         id: read-properties
         with:
           operation: 'write'
@@ -35,7 +35,7 @@ jobs:
           key-value-pairs: '{"__version__": "\"${{ env.new_version }}\""}'
 
       - name: Commit version update 🔀
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@28e16e81777b558cc906c8750092100bbb34c5e3 # v7.0.0
         id: auto-commit-action-bump-version
         with:
             commit_message: Bump version to ${{ env.new_version }}
@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Version number 🔢
         run: |
@@ -81,18 +81,18 @@ jobs:
           cat trading_calendar/__init__.py
 
       - name: Generate OpenAPI specification 📝
-        uses: column-st/fastapi-openapi-specs-action@v1.0.2
+        uses: column-st/fastapi-openapi-specs-action@dcffa69c27f2b77a9d6a4e5ebb91d62c712650c9 # v1.0.2
         with:
           moduleDir: trading_calendar
           outputExtension: json
 
       - name: Generate API doc 📝
-        uses: seeebiii/redoc-cli-github-action@v10
+        uses: seeebiii/redoc-cli-github-action@c9649b33918da5eb290b81cd03a943caea091540 # v10
         with:
           args: 'bundle openapi.json -o docs/api-doc/index.html'
 
       - name: Deploy latest API doc 📚
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8 # v4.7.3
         with:
           branch: gh-pages
           folder: docs/api-doc
@@ -102,7 +102,7 @@ jobs:
           dry-run: false
 
       - name: Deploy API doc 📚
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8 # v4.7.3
         with:
           branch: gh-pages
           folder: docs/api-doc
@@ -125,7 +125,7 @@ jobs:
 
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Version number 🔢
         run: |
@@ -140,19 +140,19 @@ jobs:
           cat trading_calendar/__init__.py
 
       - name: Set up QEMU ⚙️
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@29109295f81e9208d7d86ff1c6c12d2833863392 # v3.6.0
 
       - name: Set up Docker Buildx ⚙️
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@e468171a9de216ec08956ac3ada2f0791b6bd435 # v3.11.1
 
       - name: Login to Docker Hub 🔐
-        uses: docker/login-action@v3
+        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef # v3.6.0
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Login to GitHub Container Registry (GHCR) 🔐
-        uses: docker/login-action@v3
+        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef # v3.6.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -160,7 +160,7 @@ jobs:
 
       - name: Build and push to Docker Hub and GHCR 🚀
         id: push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
         with:
           context: .
           platforms: linux/amd64,linux/arm64
@@ -182,7 +182,7 @@ jobs:
 
       - name: Attest build provenance for Docker Hub 🔏
         id: attest-docker-hub
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3.0.0
         with:
           subject-name: index.docker.io/apptasticsoftware/trading-calendar
           subject-digest: ${{ steps.push.outputs.digest }}
@@ -190,7 +190,7 @@ jobs:
 
       - name: Attest build provenance for GHCR 🔏
         id: attest-ghcr
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3.0.0
         with:
           subject-name: ghcr.io/apptastic-software/trading-calendar
           subject-digest: ${{ steps.push.outputs.digest }}
