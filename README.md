@@ -111,6 +111,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | [Bucharest Stock Exchange](https://www.bvb.ro)                                             | XBSE     | 🇷🇴 Romania        | Europe        |
 | [Zagreb Stock Exchange](https://www.zse.hr/en)                                             | XZAG     | 🇭🇷 Croatia        | Europe        |
 | [Ljubljana Stock Exchange](https://ljse.si/en)                                             | XLJU     | 🇸🇮 Slovenia       | Europe        |
+| [Bratislava Stock Exchange](https://www.bsse.sk/bcpb/en)                                   | XBRA     | 🇸🇰 Slovakia       | Europe        |
 | [Budapest Stock Exchange](https://bse.hu)                                                  | XBUD     | 🇭🇺 Hungary        | Europe        |
 | [Moscow Exchange](https://www.moex.com/en)                                                 | XMOS     | 🇷🇺 Russia         | Europe        |
 | [Astana International Exchange](https://www.aix.kz)                                        | AIXK     | 🇰🇿 Kazakhstan     | Europe        |
