@@ -82,7 +82,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | [Colombia Securities Exchange](https://www.bvc.com.co/nueva/index_en.html)                 | XBOG     | 🇨🇴 Colombia       | South America |
 | [Lima Stock Exchange](https://www.bvl.com.pe)                                              | XLIM     | 🇵🇪 Peru           | South America |
 | [Buenos Aires Stock Exchange](https://www.bcba.sba.com.ar)                                 | XBUE     | 🇦🇷 Argentina      | South America |
-| [London Stock Exchange](https://www.londonstockexchange.com/home/homepage.htm)             | XLON     | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England        | Europe        |
+| [London Stock Exchange](https://www.londonstockexchange.com/home/homepage.htm)             | XLON     | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England        | Europe        |
 | [Euronext Amsterdam](https://www.euronext.com/en/regulation/amsterdam)                     | XAMS     | 🇳🇱 Netherlands    | Europe        |
 | [Euronext Brussels](https://www.euronext.com/en/regulation/brussels)                       | XBRU     | 🇧🇪 Belgium        | Europe        |
 | [Luxembourg Stock Exchange](https://www.luxse.com)                                         | XLUX     | 🇱🇺 Luxembourg     | Europe        |
@@ -110,6 +110,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | [Prague Stock Exchange](https://www.pse.cz/en)                                             | XPRA     | 🇨🇿 Czech Republic | Europe        |
 | [Bucharest Stock Exchange](https://www.bvb.ro)                                             | XBSE     | 🇷🇴 Romania        | Europe        |
 | [Zagreb Stock Exchange](https://www.zse.hr/en)                                             | XZAG     | 🇭🇷 Croatia        | Europe        |
+| [Ljubljana Stock Exchange](https://ljse.si/en)                                             | XLJU     | 🇸🇮 Slovenia       | Europe        |
 | [Budapest Stock Exchange](https://bse.hu)                                                  | XBUD     | 🇭🇺 Hungary        | Europe        |
 | [Moscow Exchange](https://www.moex.com/en)                                                 | XMOS     | 🇷🇺 Russia         | Europe        |
 | [Astana International Exchange](https://www.aix.kz)                                        | AIXK     | 🇰🇿 Kazakhstan     | Europe        |
