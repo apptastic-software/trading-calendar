@@ -169,7 +169,7 @@ class Exchanges:
                 'currency_name' : "Colombian peso",
                 'currency_code' : 'COP',
                 'currency_symbol' : '$',
-                'dst_transitions' : 'true',
+                'dst_transitions' : 'false',
             },
             'XLIM' : {
                 'mic' : 'XLIM',
@@ -724,7 +724,7 @@ class Exchanges:
                 'country_code' : 'RS',
                 'region' : 'Europe',
                 'flag' : '🇷🇸',
-                'currency_name' : "Dinar",
+                'currency_name' : "Serbian Dinar",
                 'currency_code' : 'RSD',
                 'currency_symbol' : 'РСД',
                 'dst_transitions' : 'true',
