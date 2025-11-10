@@ -9,7 +9,7 @@ def test_api_version(client):
 def test_markets_all(client):
     response = client.get("/api/v1/markets")
     assert response.status_code == 200
-    assert len(response.json()) == 64
+    assert len(response.json()) == 65
 
 
 def test_markets_one_mic(client):
@@ -33,7 +33,7 @@ def test_status_all(client):
     response = client.get("/api/v1/markets/status")
     assert response.status_code == 200
     print(response.json())
-    assert len(response.json()) == 64
+    assert len(response.json()) == 65
 
 
 def test_status_one_mic(client):
@@ -56,7 +56,7 @@ def test_status_bad_mic(client):
 def test_hours_all(client):
     response = client.get("/api/v1/markets/hours?start=2024-07-03&end=2024-07-03")
     assert response.status_code == 200
-    assert len(response.json()) == 64
+    assert len(response.json()) == 65
 
 
 def test_hours_one_mic(client):
@@ -88,7 +88,7 @@ def test_hours_start_date_after_end_date(client):
 def test_holidays_all(client):
     response = client.get("/api/v1/markets/holidays?start=2024-07-05&end=2024-07-05")
     assert response.status_code == 200
-    assert len(response.json()) == 1
+    assert len(response.json()) == 2
 
 
 def test_holidays_all_no_holiday(client):
