@@ -13,7 +13,7 @@ jobs:
       next-version: ${{ steps.version.outputs.next-version }}
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
 
       - name: Get version number 🔢
         id: get-version
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository ⚙️
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
 
       - name: Generate OpenAPI specification 📝
         uses: column-st/fastapi-openapi-specs-action@dcffa69c27f2b77a9d6a4e5ebb91d62c712650c9 # v1.0.2
