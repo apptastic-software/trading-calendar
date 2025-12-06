@@ -1019,7 +1019,7 @@ class Exchanges:
             },
             'XASX' : {
                 'mic' : 'XASX',
-                'name' : 'Austrialian Securities Exchange',
+                'name' : 'Australian Securities Exchange',
                 'acronym' : 'ASX',
                 'lei' : '549300USWUR0S7VMM868',
                 'url' : 'https://www.asx.com.au',
