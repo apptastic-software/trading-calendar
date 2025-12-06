@@ -119,7 +119,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | [Athens Stock Exchange](https://www.athexgroup.gr)                                         | ASEX     | 🇬🇷 Greece         | Europe        |
 | [Cyprus Stock Exchange](https://www.cse.com.cy/en-GB/home)                                 | XCYS     | 🇨🇾 Cyprus         | Europe        |
 | [Istanbul Stock Exchange](https://www.borsaistanbul.com/en)                                | XIST     | 🇹🇷 Turkey         | Europe        |
-| [Austrialian Securities Exchange](https://www.asx.com.au)                                  | XASX     | 🇦🇺 Australia      | Asia-Pacific  |
+| [Australian Securities Exchange](https://www.asx.com.au)                                   | XASX     | 🇦🇺 Australia      | Asia-Pacific  |
 | [New Zealand Exchange](https://www.nzx.com)                                                | XNZE     | 🇳🇿 New Zealand    | Asia-Pacific  |
 | [Singapore Exchange](https://www.sgx.com)                                                  | XSES     | 🇸🇬 Singapore      | Asia-Pacific  |
 | [Shanghai Stock Exchange](https://english.sse.com.cn)                                      | XSHG     | 🇨🇳 China          | Asia-Pacific  |
