@@ -1,0 +1,3 @@
+[submodule "libs/exchange_calendars"]
+	path = libs/exchange_calendars
+	url = https://github.com/apptastic-software/exchange_calendars.git
