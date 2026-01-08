@@ -12,11 +12,16 @@
 	"forwardPorts": [ 8081 ],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt && uvicorn trading_calendar.main:app --host 0.0.0.0 --port 8081 --reload"
+	"postCreateCommand": "pip3 install --user -r requirements.txt && uvicorn trading_calendar.main:app --host 0.0.0.0 --port 8081 --reload",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+
+	"features": {
+        "ghcr.io/va-h/devcontainers-features/uv:1": {},
+        "ghcr.io/devcontainers-extra/features/ruff:1": {}
+    }
 }
