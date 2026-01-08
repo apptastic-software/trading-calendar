@@ -10,7 +10,7 @@ services:
       - .:/code
 
   requirements:
-    image: python:3.13.7-slim-trixie
+    image: python:3.14.2-slim-trixie
     volumes:
       - .:/code
     working_dir: /code
