@@ -1037,7 +1037,7 @@ class Exchanges:
                 'mic' : 'XNZE',
                 'name' : 'New Zealand Exchange',
                 'acronym' : 'NZX',
-                'lei' : None,
+                'lei' : '254900KTE7C5U39QMD43',
                 'url' : 'https://www.nzx.com',
                 'city' : 'Wellington',
                 'country' : 'New Zealand',
