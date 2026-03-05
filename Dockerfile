@@ -3,12 +3,12 @@ FROM python:3.14.3-slim-trixie
 RUN apt-get update && apt-get install tzdata
 
 ## To build exchange_calendars from source uncomment below and remove from requirements.txt
-#RUN apt-get update && apt-get install -y git tzdata
-#WORKDIR /code
-#COPY ./libs /code/libs
-#RUN pip install uv
-#WORKDIR /code/libs/exchange_calendars
-#RUN rm -rf dist && SETUPTOOLS_SCM_PRETEND_VERSION=4.12 uv build && uv pip install --system dist/*.whl
+RUN apt-get update && apt-get install -y git tzdata
+WORKDIR /code
+COPY ./libs /code/libs
+RUN pip install uv
+WORKDIR /code/libs/exchange_calendars
+RUN rm -rf dist && SETUPTOOLS_SCM_PRETEND_VERSION=4.13.1.1 uv build && uv pip install --system dist/*.whl
 
 WORKDIR /code
 
