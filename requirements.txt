@@ -1,7 +1,7 @@
 tzdata==2025.3
 fastapi==0.135.1
 pydantic==2.12.5
-uvicorn==0.40.0
+uvicorn==0.41.0
 slowapi==0.1.9
 email-validator==2.3.0
 exchange_calendars==4.13.2
