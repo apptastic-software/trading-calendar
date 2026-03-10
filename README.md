@@ -92,6 +92,7 @@ http://127.0.0.1:8000/api/v1/openapi.json
 | [Deutsche Börse Xetra](https://www.xetra.com/xetra-en)                                     | XETR     | 🇩🇪 Germany        | Europe        |
 | [Eurex Deutschland](https://www.eurex.com/ex-en)                                           | XEUR     | 🇩🇪 Germany        | Europe        |
 | [European Energy Exchange](https://www.eex.com)                                            | XEEE     | 🇩🇪 Germany        | Europe        |
+| [Börse Stuttgart](https://www.boerse-stuttgart.de/en)                                      | XSTU     | 🇩🇪 Germany        | Europe        |
 | [Hamburg Stock Exchange](https://www.boerse-hamburg.de)                                    | XHAM     | 🇩🇪 Germany        | Europe        |
 | [Duesseldorf Stock Exchange](https://www.boerse-duesseldorf.de)                            | XDUS     | 🇩🇪 Germany        | Europe        |
 | [SIX Swiss Exchange](https://www.six-group.com/exchanges/index.html)                       | XSWX     | 🇨🇭 Switzerland    | Europe        |
