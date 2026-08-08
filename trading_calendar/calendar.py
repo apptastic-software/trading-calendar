@@ -128,6 +128,12 @@ class Calendar:
     def get_close_time(self, ts):
         return self.__get_time(ts, self.calendar.close_times)
 
+    def get_open_offset(self):
+        return self.calendar.open_offset
+
+    def get_close_offset(self):
+        return self.calendar.close_offset
+
     def get_early_close_time(self, ts):
         if hasattr(self.calendar, 'regular_early_close'):
             return self.calendar.regular_early_close

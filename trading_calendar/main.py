@@ -307,10 +307,12 @@ def fetch_status(mic_list):
             is_special_open = special_open_time != None
             is_early_close = early_close_time != None
 
+            open_date = local_time.date() if is_special_open else local_time.date() + timedelta(calendar.get_open_offset())
             open_time = special_open_time if (is_special_open) else calendar.get_open_time(local_time.date())
-            open_time = datetime.combine(local_time.date(), open_time, tz)
+            open_time = datetime.combine(open_date, open_time, tz)
+            close_date = local_time.date() if is_early_close else local_time.date() + timedelta(calendar.get_close_offset())
             close_time = early_close_time if (is_early_close) else calendar.get_close_time(local_time.date())
-            close_time = datetime.combine(local_time.date(), close_time, tz)
+            close_time = datetime.combine(close_date, close_time, tz)
 
             is_weekend = calendar.is_weekend(local_time)
             is_business_day = (not is_weekend) and (not holiday_name or (is_special_open or is_early_close)) 
@@ -364,10 +366,12 @@ def fetch_trading_hours(mic_list, start_date, end_date):
                     continue
 
                 tz = calendar.get_timezone()
+                open_date = d if is_special_open else d + timedelta(calendar.get_open_offset())
                 open_time = special_open_time if (is_special_open) else calendar.get_open_time(d)
-                open_time = datetime.combine(d, open_time, tz)
+                open_time = datetime.combine(open_date, open_time, tz)
+                close_date = d if is_early_close else d + timedelta(calendar.get_close_offset())
                 close_time = early_close_time if (is_early_close) else calendar.get_close_time(d)
-                close_time = datetime.combine(d, close_time, tz)
+                close_time = datetime.combine(close_date, close_time, tz)
 
                 trading_hours = {
                     'mic' : mic,
@@ -421,10 +425,12 @@ def fetch_market_holidays(mic_list, start_date, end_date):
                     holiday['holiday_name'] = holiday_name
 
                 tz = calendar.get_timezone()
+                open_date = d if is_special_open else d + timedelta(calendar.get_open_offset())
                 open_time = special_open_time if (is_special_open) else calendar.get_open_time(d)
-                open_time = datetime.combine(d, open_time, tz)
+                open_time = datetime.combine(open_date, open_time, tz)
+                close_date = d if is_early_close else d + timedelta(calendar.get_close_offset())
                 close_time = early_close_time if (is_early_close) else calendar.get_close_time(d)
-                close_time = datetime.combine(d, close_time, tz)
+                close_time = datetime.combine(close_date, close_time, tz)
                 holiday['is_early_close'] = is_early_close
                 if is_early_close or is_special_open:
                     holiday['open_time'] = open_time

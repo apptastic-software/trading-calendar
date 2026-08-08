@@ -53,6 +53,13 @@ def test_status_bad_mic(client):
     assert response.status_code == 422
 
 
+def test_status_cmes_open_close_time_not_same(client):
+    response = client.get("/api/v1/markets/hours?mic=CMES&start=2026-07-29&end=2026-07-30")
+    assert response.status_code == 200
+    market = response.json()[0]
+    assert market['open_time'] != market['close_time']
+
+
 def test_hours_all(client):
     response = client.get("/api/v1/markets/hours?start=2024-07-03&end=2024-07-03")
     assert response.status_code == 200
@@ -83,6 +90,15 @@ def test_hours_bad_end_date(client):
 def test_hours_start_date_after_end_date(client):
     response = client.get("/api/v1/markets/hours?mic=XNYS&start=2024-07-05&end=2024-07-03")
     assert response.status_code == 422
+
+
+def test_hours_cmes_open_close_time_not_same(client):
+    response = client.get("/api/v1/markets/hours?mic=CMES&start=2024-07-01&end=2024-07-05")
+    assert response.status_code == 200
+    trading_hours = response.json()
+    assert len(trading_hours) > 0
+    for hours in trading_hours:
+        assert hours['open_time'] != hours['close_time']
 
 
 def test_holidays_all(client):
