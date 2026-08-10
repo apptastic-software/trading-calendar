@@ -6,7 +6,7 @@ Trading Calendar
 [![API Doc](https://img.shields.io/github/v/release/apptastic-software/trading-calendar?display_name=release&label=api%20doc)](https://apptastic-software.github.io/trading-calendar/api-doc/latest)
 [![License](https://img.shields.io/:license-MIT-blue.svg?style=flat-round)](https://apptastic-software.mit-license.org)
 
-Free trading calendar REST API with holiday, late open, and early close. Over [60 unique exchange calendars](#calendars) for global equity and futures markets.
+Free trading calendar [REST API](https://apptastic-software.github.io/trading-calendar/api-doc/latest/) with holiday, late open, and early close. Over [60 unique exchange calendars](#calendars) for global equity and futures markets.
 
 Data includes:
 
