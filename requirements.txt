@@ -1,6 +1,6 @@
 tzdata==2026.3
 fastapi==0.141.1
-pydantic==2.12.5
+pydantic==2.13.5
 uvicorn==0.52.1
 slowapi==0.1.10
 email-validator==2.3.0
