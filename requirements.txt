@@ -1,5 +1,5 @@
 tzdata==2026.6
-fastapi==0.141.1
+fastapi==0.162.5
 pydantic==2.14.3
 uvicorn==0.54.0
 slowapi==0.1.10
