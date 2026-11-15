@@ -21,3 +21,6 @@ dependencies = [
     "holidays",
 ]
 dynamic = ["version"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "trading_calendar"]
