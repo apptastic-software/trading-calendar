@@ -25,6 +25,9 @@ updates:
     allow:
       # Allow both direct and indirect updates for all packages
       - dependency-type: "all"
+    ignore:
+      - dependency-name: "pandas"
+        versions: [">= 3.1"]
 
 
   - package-ecosystem: docker
