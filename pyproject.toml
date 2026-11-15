@@ -19,5 +19,9 @@ dependencies = [
     "email-validator",
     "exchange_calendars",
     "holidays",
+    "pandas>=1.5,<3.1",
 ]
 dynamic = ["version"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "trading_calendar"]
