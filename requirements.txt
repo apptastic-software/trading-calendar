@@ -6,4 +6,4 @@ slowapi==0.1.10
 email-validator==2.3.0
 exchange_calendars==4.13.2
 holidays==0.102
-pandas==3.0.1
+pandas==3.1.1

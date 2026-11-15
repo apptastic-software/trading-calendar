@@ -19,7 +19,7 @@ dependencies = [
     "email-validator",
     "exchange_calendars",
     "holidays",
-    "pandas>=1.5,<3.1",
+    "pandas>=1.5,<3.2",
 ]
 dynamic = ["version"]
 
